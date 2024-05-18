@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;700;900&display=swap');
 
 :root{
-    --main-color: #23cf57;
-    --black: #555;
-    --light: #777;
-    --bg: #e9f3fc;
+    --main-color: #2F5C28;
+    --second-color: #e8edd7;
     --border: .1rem solid rgba(0, 0, 0, 10%);
     --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 10%);
     --radius: .5rem;
@@ -20,128 +18,447 @@
    outline: none;
    transition: all .3s ease-in-out;
 }
+
 *::selection{
     background: var(--main-color);
     color: #fff;
 }
+
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 9rem;
     font-size: 60%;
 }
-section{
-    padding: 2rem 9%;
-}
-h1{
-    text-align: center;
-    padding-bottom: 3rem;
-    font-size: 4rem;
-    color: var(--black);
-}
-h1 span{
-    color: var(--main-color);
-    background: var(--bg);
-    border-radius: var(--radius);
-    padding: 0 .1rem;
-}
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding: .8rem 3rem;
-    font-size: 1.7rem;
-    cursor: pointer;
-    color: #fff;
-    background: var(--main-color);
-    border-radius: var(--radius);
-    box-shadow: var(--box-shadow);
-    position: relative;
-    z-index: 1;
-}
-.btn:hover{
-    background: var(--black);
-}
+
 header{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
-    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header.scrolled {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
+.logo{
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+header.scrolled .logo{
+    color: var(--main-color);
+}
+
+nav a{
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    color: white;
+    transition: color 0.3s;
+}
+
+header.scrolled .navbar a {
+    color: black;
+}
+
+nav a:hover{
+    color: var(--main-color);
+}
+
+header.scrolled .navbar a:hover {
+    color: var(--main-color);
+}
+
+#menu-btn{
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 1rem 1.3rem;
+    border-radius: var(--radius);
+    color: var(--main-color);
+    background: var(--bg);
+    display: none;
+}
+
+#menu-btn:hover{
+    color: #fff;
+    background: var(--main-color);
+}
+
+header .current{
+    font-weight: bold;
+    padding: 1rem;
+    border: 1px solid var(--main-color);
+    border-radius: var(--radius);
+}
+
+#galvena{
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--main-color);
+    color: white;
+}
+
+#myVideo{
+    height: 60vh;
+}
+
+.content{
+    padding-left: 5%;
+    padding-right: 3rem;
+}
+
+.content h1{
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.content p{
+    line-height: 2;
+    font-size: 1.5rem;
+}
+
+#vakances {
+    padding: 5rem 5%;
+    text-align: center;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#vakances h2, #aktualitates h2{
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+#vakances .oval {
+    position: relative;
+    width: 80%;
+    height: 30rem;
+    max-width: 75rem;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 115rem;
+    background-color: white;
     box-shadow: var(--box-shadow);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 9%;
+    flex-wrap: wrap;
+    background: var(--main-color);
+    color: white;
+}
 
+#vakances .oval .content {
+    flex: 1;
 }
-.logo{
-    font-size: 3rem;
-    color: var(--main-color);
-    font-weight: 700;
+
+#vakances .oval .content h2 {
+    font-size: 2rem;
 }
-nav a{
-    font-size: 1.8rem;
-    color: var(--light);
-    margin-left: 2rem;
+
+#vakances .oval .content p {
+    font-size: 2em;
 }
-nav a:hover{
-    color: var(--main-color);
+
+#vakances .oval img {
+    width: 26rem;
+    height: 25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid black;
 }
-#informacija .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-    /* grid-template-columns: auto auto auto;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-columns: repeat(3, 1fr); */
-    gap: 1.5rem;
-}
-#informacija .box-container img{
-    max-width: 100%;
-}
-.text-info{
+
+.btn{
+    border: 1px solid black;
+    color: black;
+    font-size: 2rem;
     display: flex;
-    flex-direction: column;
+    width: 15rem;
     justify-content: center;
 }
-.text-info h2{
-    font-size: 3.2rem;
-    color: var(--black);
+
+.btn:hover{
+    border-color: var(--main-color);
+    color: var(--main-color);
 }
-.text-info p{
-    color: var(--light);
-    font-size: 1.54rem;
-    padding: 1rem 0 3rem;
-    line-height: 1.75;
+
+#aktualitates{
+    padding: 5rem 5%;
+    background: url(../images/bgAKT.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-#informacija .facts{
+
+#aktualitates h2{
+    text-align: center;
+    color: var(--main-color);
+}
+
+#aktualitates p{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 3rem;
+}
+
+#aktualitates .box{
+    text-align: center;
+    padding: 0;
+    background: white;
+    margin-bottom: 2rem;
+}
+
+#aktualitates .box img{
+    width: 100%;
+    height: 30rem;
+}
+
+#aktualitates .box .aktualVirsraksts{
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    color: black;
+    font-weight: bold;
+}
+
+#aktualitates .box .aktualVirsraksts:hover{
+    color: var(--main-color);
+}
+
+#aktualitates .box p{
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    line-height: 2;
+}
+
+#aktualitates .btn{
+    margin: auto;
+}
+
+@media (max-width: 1080px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 985px){
+    #menu-btn{
+        display: block;
+    }
+
+    nav{
+        position: absolute;
+        top: 115%;
+        right: 2rem;
+        box-shadow: var(--box-shadow);
+        background: #fff;
+        border: var(--border);
+        border-radius: var(--radius);
+        width: 30rem;
+        transform: scale(0);
+        transform-origin: top right;
+        opacity: 0;
+    }
+
+    nav.active{
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    nav a{
+        font-size: 2rem;
+        display: block;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: var(--radius);
+    }
+
+    nav a:hover{
+        background: var(--bg);
+    }
+}
+
+/* vakances.php */
+.square{
+    padding: 12rem 5%;
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-#informacija .box{
+
+.filter{
+    padding: 3rem;
+    width: 25%;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    align-items: center;
+    background: url(../images/bgFIL.jpg);
+}
+
+.filter input, .filter select{
+    border: 1px solid black;
+    margin: 2rem 0;
+    width: 25rem;
+    height: 4rem;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+}
+
+.filter label{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.filter .radio{
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.filter .radio input{
+    width: 2rem;
+    height: 2rem;
+}
+
+.filter .btn{
+    height: 4rem;
+    align-items: center;
+    background: var(--main-color);
+    color: white;
+    border-color: white;
+}
+
+.filter .btn:hover{
+    background-color: white;
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.sarakstsArVakancem{
+    width: 70%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.ieraksts{
+    border: 1px solid var(--main-color);
+    font-size: 2rem;
+    line-height: 2;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-    width: 33%;
-    border: var(--border);
-    border-radius: var(--radius);
+    flex-wrap: wrap;
     padding: 2rem;
 }
-#informacija .box b{
-    font-size: 1.65rem;
-    color: var(--light);
+
+.ieraksts img{
+    margin: auto;
+    max-height: 15rem;
 }
-#informacija .box i{
+
+.square span{
+    background: var(--second-color);
+    font-weight: bold;
+}
+
+.ieraksts li{
+    list-style: none;
+}
+
+.ieraksts h2, .ieraksts h3{
+    text-align: center;
+}
+
+.ieraksts .btn{
+    width: 100%;
+    margin-top: 1rem;
+    background: var(--second-color);
+    border-color: var(--second-color);
+    font-weight: bold;
+}
+
+.ieraksts .btn:hover{
+    background-color: white;
     color: var(--main-color);
-    font-size: 2.1rem;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    padding: 16px;
-    background-color: #e9f3fc;
-    margin-bottom: 1rem;
+    border-color: var(--main-color);
 }
-.box-container img{
-    border-radius: 30px;
+
+/* aktualitates.php */
+.sadalaAktualitates {
+    width: 100%;
+    padding: 15rem 5%;
+}
+
+.sadalaAktualitates .box {
+    text-align: center;
+    padding: 0;
+    background: white;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.sadalaAktualitates .box img {
+    width: 100%;
+    height: 30rem;
+}
+
+.sadalaAktualitates .box .date {
+    font-size: 2rem;
+}
+
+.sadalaAktualitates .box h2 {
+    font-size: 2.5rem;
+}
+
+.sadalaAktualitates .box .toggle-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: -3rem;
+    right: 1rem;
+    color: var(--main-color);
+    font-weight: bold;
+    background: none;
+}
+
+.sadalaAktualitates .box .toggle-btn:hover{
+    background: var(--main-color);
+    color: white;
+    border-color: white;
+}
+
+.sadalaAktualitates .box .content {
+    display: none;
+    font-size: 2rem;
+    text-align: justify;
+}
+
+.sadalaAktualitates .box-container{
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
 }
