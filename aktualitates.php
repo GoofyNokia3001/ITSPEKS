@@ -4,8 +4,7 @@
 ?>
 
 <div class="sadalaAktualitates">
-
-<div class="box-container">
+    <div class="box-container">
         <div class="box">
             <img src="https://www.loungelizard.com/wp-content/uploads/top-web-development-companies-2024-1-767x447.webp">
             <p class="date">18/05/2024</p>
@@ -39,14 +38,7 @@
             <h2>How to Use AI in Web Design: A Comprehensive Guide</h2>
             <button class="toggle-btn" onclick="toggleContent(this)">Vairāk</button>
             <div class="content">
-                <p>
-                In the dynamic realm of web design, where creating websites that captivate and engage users is paramount, AI has emerged as a transformative force. From streamlining the design process to enhancing user experience, AI-powered tools and technologies are revolutionizing the way websites are built and optimized.
-
-Generative AI, a subset of artificial intelligence, has gained prominence for its ability to generate website layouts, designs, and even content autonomously. This innovation is reshaping the landscape of web design, offering unprecedented efficiency and creativity in crafting bespoke online experiences.
-
-One of the most compelling aspects of integrating AI into web design is its impact on user experience. By leveraging AI algorithms, designers can analyze user behavior patterns and preferences to create websites that are not only visually appealing but also highly intuitive and user-friendly. Whether it’s optimizing the color palette for maximum impact or customizing content based on user interactions, AI empowers designers to tailor websites to meet the unique needs of their audience.
-
-Moreover, the advent of AI-based website builders has democratized the process of building a website, making it accessible to individuals and businesses alike. These intuitive platforms utilize artificial intelligence to automate various aspects of website creation, from layout design to content generation, enabling users to create professional-looking websites with minimal effort.
+                <p>In the dynamic realm of web design, where creating websites that captivate and engage users is paramount, AI has emerged as a transformative force. From streamlining the design process to enhancing user experience, AI-powered tools and technologies are revolutionizing the way websites are built and optimized. Generative AI, a subset of artificial intelligence, has gained prominence for its ability to generate website layouts, designs, and even content autonomously. This innovation is reshaping the landscape of web design, offering unprecedented efficiency and creativity in crafting bespoke online experiences. One of the most compelling aspects of integrating AI into web design is its impact on user experience. By leveraging AI algorithms, designers can analyze user behavior patterns and preferences to create websites that are not only visually appealing but also highly intuitive and user-friendly. Whether it’s optimizing the color palette for maximum impact or customizing content based on user interactions, AI empowers designers to tailor websites to meet the unique needs of their audience. Moreover, the advent of AI-based website builders has democratized the process of building a website, making it accessible to individuals and businesses alike. These intuitive platforms utilize artificial intelligence to automate various aspects of website creation, from layout design to content generation, enabling users to create professional-looking websites with minimal effort.
                 </p>
             </div>
         </div>
@@ -56,10 +48,7 @@ Moreover, the advent of AI-based website builders has democratized the process o
             <h2>Exploring 2024 UI/UX Design Trends: The Future of User Interaction</h2>
             <button class="toggle-btn" onclick="toggleContent(this)">Vairāk</button>
             <div class="content">
-                <p>As the digital landscape evolves, expectations for user interfaces and experiences are also advancing. The coming year is poised to unveil revolutionary 2024 UI/UX design trends, significantly altering how users interact with technology. These trends are expected to enhance user engagement, streamline interactions, and offer more intuitive and immersive experiences.
-
-Emerging 2024 UX/UI Design Trends: Enhancing Digital Interactions
-As we approach 2024, the shift towards more dynamic and user-centered designs becomes crucial for digital products’ success. The 2024 UX/UI design trends are set to influence how users interact with apps and websites profoundly. Key insights include:</p>
+                <p>As the digital landscape evolves, expectations for user interfaces and experiences are also advancing. The coming year is poised to unveil revolutionary 2024 UI/UX design trends, significantly altering how users interact with technology. These trends are expected to enhance user engagement, streamline interactions, and offer more intuitive and immersive experiences. Emerging 2024 UX/UI Design Trends: Enhancing Digital Interactions As we approach 2024, the shift towards more dynamic and user-centered designs becomes crucial for digital products’ success. The 2024 UX/UI design trends are set to influence how users interact with apps and websites profoundly. Key insights include:</p>
             </div>
         </div>
         <div class="box">
@@ -68,17 +57,12 @@ As we approach 2024, the shift towards more dynamic and user-centered designs be
             <h2>Top eCommerce Price Monitoring Tools: An Overview</h2>
             <button class="toggle-btn" onclick="toggleContent(this)">Vairāk</button>
             <div class="content">
-                <p>Staying competitive is paramount in the dynamic landscape of eCommerce. As online markets continuously evolve, keeping tabs on pricing strategies, product fluctuations, and market trends becomes increasingly vital. This is where eCommerce price monitoring tools step in, serving as indispensable assets for businesses aiming to thrive in the digital marketplace.
-
-Price Intelligence and Market Trends
-
-Ecommerce price monitoring tools offer businesses invaluable insights into price intelligence and market trends. By leveraging sophisticated algorithms and data analytics, these tools provide comprehensive analyses of product prices across various platforms. From identifying pricing patterns to forecasting market trends, they empower businesses to make informed decisions and stay ahead of the curve.
-
-Price Comparison and Tracking
-
-One of the primary functions of eCommerce price monitoring tools is facilitating price comparison and tracking. They scour the vast expanse of the internet, including competitor websites, to gather data on product prices. Through meticulous data collection and analysis, these tools enable businesses to monitor competitor pricing strategies, identify pricing trends, and optimize their own prices accordingly.</p>
+                <p>Staying competitive is paramount in the dynamic landscape of eCommerce. As online markets continuously evolve, keeping tabs on pricing strategies, product fluctuations, and market trends becomes increasingly vital. This is where eCommerce price monitoring tools step in, serving as indispensable assets for businesses aiming to thrive in the digital marketplace. Price Intelligence and Market Trends Ecommerce price monitoring tools offer businesses invaluable insights into price intelligence and market trends. By leveraging sophisticated algorithms and data analytics, these tools provide comprehensive analyses of product prices across various platforms. From identifying pricing patterns to forecasting market trends, they empower businesses to make informed decisions and stay ahead of the curve. Price Comparison and Tracking One of the primary functions of eCommerce price monitoring tools is facilitating price comparison and tracking. They scour the vast expanse of the internet, including competitor websites, to gather data on product prices. Through meticulous data collection and analysis, these tools enable businesses to monitor competitor pricing strategies, identify pricing trends, and optimize their own prices accordingly.</p>
             </div>
         </div>
     </div>
-</body>
-</html>
+</div>
+    
+<?php
+    require "footer.php";
+?>
