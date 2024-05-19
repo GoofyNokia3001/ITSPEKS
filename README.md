@@ -1,6 +1,6 @@
 - [ ] Sakumlapa (Elīna)
 - [x] Vakances (Elīna)
-- [ ] Aktualitates (Elīna)
+- [x] Aktualitates (Elīna)
 - [ ] Par mums (Elīna)
 - [ ] Pieteikties lapa (Elīna)
 - [ ] Login (Kļims)
