@@ -55,6 +55,11 @@ header.scrolled {
     font-weight: 700;
     transition: color 0.3s;
 }
+.loginL{
+    color: var(--main-color);
+    font-size: 3rem;
+    font-weight: 700;
+}
 
 header.scrolled .logo{
     color: var(--main-color);
@@ -464,4 +469,116 @@ header .current{
 
 .sadalaAktualitates .box-container{
     grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+}
+
+.container{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boxcenter{
+    background-color: #fff;
+    width: 22.5%;
+    height: 60%;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login img{
+    width: 16rem;
+    margin-bottom: -4rem;
+}
+.login p{
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin: 1rem 0;
+}
+.login form{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login form .column{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login form .row input{
+    width: 23rem;
+    max-height: .8rem;
+    font-size: 1.5rem;
+    background-color: #eee;
+    padding: 1.5rem;
+    margin: 1.4rem 0;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3rem;
+}
+.login form .row i{
+    background-color: var(--main-color);
+    padding: 1rem;
+    border-radius: 1.5rem;
+    color: #fff;
+    position: absolute;
+}
+#btn1{
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 1rem 4rem;
+    font-size: 1.2rem;
+    border-radius: 3rem;
+}
+#btn1:hover{
+    cursor: pointer;
+    background-color: #289b17;
+}
+.admin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.moderatoriAdmin{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    width: 75vw;
+}
+
+.moderatoriAdmin table{
+    font-size: 1.5rem;
+    width: 100%;
+    border: .4rem #289b17 solid;
+    border-radius: 10px;
+}
+th{
+    text-align: center;
+    height: 4rem;
+}
+td{
+    text-align: center;
+    height: 4rem;
+    border-top: .1rem solid #ddd;
+}
+tr:hover{
+    background-color: var(--bg);
+}
+th{
+    color: var(--black);
 }

@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="../assets/style.css">
     <script src="../assets/script.js" defer></script>
 </head>
-<body style="background-color: var(--main-color);">
+<body>
     <header>
-        <a href="../" class="logo">IT - SPĒKS</a>
+        <a href="#" class="logo">IT - SPĒKS</a>
         <nav class="navbar">
             <a href="./">Sākumlapa</a>
             <a href="vakances.php" class="<?php echo ($page == 'vakances' ? 'current' : '') ?>" >Vakances</a>
@@ -22,6 +22,3 @@
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
     </header>
-    <section class="adminSection">
-
-    </section>
