@@ -66,6 +66,9 @@ nav a{
     color: white;
     transition: color 0.3s;
 }
+.navbar a{
+    font-size: 2.5rem;
+}
 
 header.scrolled .navbar a {
     color: black;
