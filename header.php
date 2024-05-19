@@ -16,7 +16,7 @@
             <a href="./">Sākumlapa</a>
             <a href="vakances.php" class="<?php echo ($page == 'vakances' ? 'current' : '') ?>" >Vakances</a>
             <a href="aktualitates.php" class="<?php echo ($page == 'aktualitates' ? 'current' : '') ?>" >Jaunākās aktualitātes</a>
-            <a href="kontakti.php" class="<?php echo ($page == 'parmums' ? 'current' : '') ?>" >Par mums</a>
+            <a href="parmums.php" class="<?php echo ($page == 'parmums' ? 'current' : '') ?>" >Par mums</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
     </header>

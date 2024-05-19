@@ -50,7 +50,7 @@
                 <p><span>2700 EUR</span></p>
                 <p>Darbinieka amats uz nenoteiktu laiku</p>
                 <p>Sanita Batarāga, datuaizsardziba@ldz.lv, +371 12345678</p>
-                <a href="#" class="btn">Pieteikties</a>
+                <a href="pieteikums.php" class="btn">Pieteikties</a>
             </div>
             <div class="ieraksts">
                 <h2>Informācijas sistēmu TESTĒTĀJS</h2>
@@ -71,9 +71,11 @@
                 <p><span>1600 EUR</span></p>
                 <p>Uzņēmuma līgums</p>
                 <p>Renārs Būmanis, info@sinatrade.lv, +371 87654321</p>
-                <a href="#" class="btn">Pieteikties</a>
+                <a href="pieteikums.php" class="btn">Pieteikties</a>
             </div>
         </div>
     </div>
-</body>
-</html>
+    
+<?php
+    require "footer.php";
+?>

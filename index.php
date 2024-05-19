@@ -11,15 +11,12 @@
         </video>
     </section>
     <section id="vakances">
-        <h2>PIEEJAMS JAUNAS VAKANCES</h2>
-        <div class="oval">
-            <div class="content">
-                <h2>TESTĒTĀJS</h2>
-                <p>ALGA: 2000$</p>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png">
+        <div class="content">
+            <h2>JAUNS <span>DARBS</span> - JAUNA <span>DZĪVE</span></h2>
+            <p>Mūsu vietnes sadaļa "Vakances" ir Jūsu uzticams palīgs IT darba vietu meklēšanā Latvijā. Šeit Jūs varat viegli un ātri atrast aktuālos piedāvājumus no vadošajiem uzņēmumiem. Lietotājam draudzīgā saskarne un uzlabotie filtri ļaus Jums atlasīt vakances pēc dažādiem kritērijiem. Nepalaidiet garām iespēju atrast savu sapņu darbu - izmantojiet mūsu darba meklēšanas rīku un sāciet jaunu profesionālās karjeras posmu jau šodien!</p>
+            <a href="vakances.php" class="btn">Skatīt vakances</a>
         </div>
-        <a href="vakances.php" class="btn">Skatīt visas</a>
+        <img src="images/newJob.png">
     </section>
     <section id="aktualitates">
         <h2>AKTUALITĀTES</h2>
@@ -49,8 +46,7 @@
     <section id="kontakti">
 
     </section>
-    <footer>
 
-    </footer>
-</body>
-</html>
+<?php
+    require "footer.php";
+?>
