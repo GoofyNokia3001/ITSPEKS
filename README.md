@@ -1,4 +1,4 @@
-- [ ] Sakumlapa (Elīna)
+- [x] Sakumlapa (Elīna)
 - [x] Vakances (Elīna)
 - [x] Aktualitates (Elīna)
 - [ ] Par mums (Elīna)
