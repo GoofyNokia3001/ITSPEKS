@@ -3,7 +3,7 @@
 - [x] Aktualitates (Elīna)
 - [x] Par mums (Elīna)
 - [x] Pieteikties lapa (Elīna)
-- [ ] Responsivitati (Elīna)
+- [x] Responsivitati (Elīna)
 - [ ] Login (Kļims)
 - [ ] Admin index.php (Kļims)
 - [ ] Admin vakances.php (Kļims)
