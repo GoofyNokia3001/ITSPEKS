@@ -22,20 +22,20 @@
         <h2>AKTUALITĀTES</h2>
         <p>IEPAZĪSTIETIES AR JAUNĀKAJĀM AKTUALITĀTĒM IT JOMĀ.</p>
         <div class="box-container">
-            <div class="box">
-                <img src="https://www.loungelizard.com/wp-content/uploads/top-web-development-companies-2024-1-767x447.webp">
+            <div class="box radius">
+                <img src="https://www.loungelizard.com/wp-content/uploads/top-web-development-companies-2024-1-767x447.webp" class="radius">
                 <p>18/05/2024</p>
                 <a href="" class="aktualVirsraksts">TOP Web Development Companies in 2024</a>
                 <p>It’s 2024 and you want to launch a new website (or refresh an existing one), but where do you start? How do you find the top […]</p>
             </div>
-            <div class="box">
-                <img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp">
+            <div class="box radius">
+                <img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp" class="radius">
                 <p>17/05/2024</p>
                 <a href="" class="aktualVirsraksts">Best Web Design Companies in 2024</a>
                 <p>It doesn’t matter if you are planning a new website or upgrading an existing site, you want to work with the best web design company available […]</p>
             </div>
-            <div class="box">
-                <img src="https://www.loungelizard.com/wp-content/uploads/Top-10-Best-Financial-Website-Designs-1-767x447.webp">
+            <div class="box radius">
+                <img src="https://www.loungelizard.com/wp-content/uploads/Top-10-Best-Financial-Website-Designs-1-767x447.webp" class="radius">
                 <p>16/05/2024</p>
                 <a href="" class="aktualVirsraksts">Top 10 Best Financial Website Designs</a>
                 <p>Key Takeaways The best financial website designs use an intuitive flow coupled with a stellar UI/UX experience to capture site visitors’ business. Digital payments rose to […]</p>

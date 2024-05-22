@@ -24,6 +24,14 @@
     color: #fff;
 }
 
+.radius{
+    border-radius: var(--radius);
+}
+
+.shadow{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 9rem;
@@ -55,6 +63,7 @@ header.scrolled {
     font-weight: 700;
     transition: color 0.3s;
 }
+
 .loginL{
     color: var(--main-color);
     font-size: 3rem;
@@ -87,17 +96,27 @@ header.scrolled .navbar a:hover {
     color: var(--main-color);
 }
 
-#menu-btn{
+#menu-btn {
     cursor: pointer;
     font-size: 2.5rem;
     padding: 1rem 1.3rem;
     border-radius: var(--radius);
     color: var(--main-color);
-    background: var(--bg);
+    background: white;
     display: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#menu-btn:hover{
+#menu-btn:hover {
+    color: black;
+    background: var(--main-color);
+}
+
+#menu-btn.scrolled {
+    background: var(--bg);
+}
+
+#menu-btn.scrolled:hover {
     color: #fff;
     background: var(--main-color);
 }
@@ -117,11 +136,14 @@ header .current{
     align-items: center;
     background: var(--main-color);
     color: white;
+    flex-wrap: wrap;
 }
 
 #myVideo{
+    width: 55%;
     height: 60vh;
 }
+
 span{
     border-radius: 1rem;
 }
@@ -139,6 +161,10 @@ span{
 .content p{
     line-height: 2;
     font-size: 1.5rem;
+}
+
+#galvena .content{
+    width: 45%;
 }
 
 #vakances {
@@ -165,6 +191,10 @@ span{
 
 #vakances .content{
     width: 60%;
+}
+
+#vakances img{
+    width: 40%;
 }
 
 .btn{
@@ -293,10 +323,75 @@ footer img{
         padding: 1rem;
         margin: 1rem;
         border-radius: var(--radius);
+        color: black;
     }
 
     nav a:hover{
         background: var(--bg);
+    }
+}
+
+@media (max-width: 983px){
+    #vakances img{
+        width: 70%;
+    }
+
+    #vakances .content{
+        width: 100%;
+    }
+}
+
+@media (max-width: 885px){
+    #galvena{
+        height: 106vh;
+    }
+
+    #galvena .content {
+        display: flex;
+        width: 100%;
+        height: 40%;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 5rem;
+    }
+
+    #myVideo {
+        width: 100%;
+    }
+
+    .content p{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 773px){
+    #galvena{
+        height: 80vh;
+    }
+
+    #galvena .content {
+        height: 30%;
+    }
+}
+
+@media (max-width: 571px){
+    #myVideo {
+        height: 50%;
+    }
+}
+
+@media (max-width: 390px){
+    #galvena{
+        height: 100vh;
+    }
+
+    #galvena .content {
+        height: 30%;
+        margin-top: 15rem;
+    }
+
+    #myVideo {
+        height: 30%;
     }
 }
 
@@ -331,12 +426,19 @@ footer img{
 .filter label{
     font-size: 1.8rem;
     font-weight: bold;
+    margin-left: 1rem;
+}
+
+#dil{
+    margin-left: 0;
 }
 
 .filter .radio{
     width: 20rem;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
     gap: .5rem;
 }
 
@@ -368,13 +470,29 @@ footer img{
 }
 
 .ieraksts{
-    border: 1px solid var(--main-color);
     font-size: 2rem;
     line-height: 2;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     padding: 2rem;
+}
+
+.ieraksts .toggle-btn{
+    width: 10%;
+    margin-left: 90%;
+    font-size: 2rem;
+    background: none;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.ieraksts .toggle-btn:hover{
+    background: var(--second-color);
+    border-radius: .3rem;
+    color: black;
+    width: 12%;
+    margin-left: 85%;
 }
 
 .ieraksts img{
@@ -407,6 +525,56 @@ footer img{
     background-color: white;
     color: var(--main-color);
     border-color: var(--main-color);
+}
+
+@media (max-width: 1298px){
+    .filter input, .filter select{
+        width: 20rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 984px){
+    .filter input, .filter select{
+        width: 15rem;
+    }
+
+    .filter .radio{
+        width: 15rem;
+    }
+}
+
+@media (max-width: 792px){
+    .filter{
+        padding: 1rem;
+    }
+
+    .ieraksts .toggle-btn:hover{
+        width: 20%;
+    }
+}
+
+@media (max-width: 554px){
+    .square{
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .filter{
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .filter input, .filter select{
+        margin: 1rem;
+    }
+
+    .sarakstsArVakancem{
+        width: 100%;
+    }
 }
 
 /* aktualitates.php */
@@ -460,17 +628,31 @@ footer img{
     font-size: 2rem;
     text-align: justify;
 }
-.sadalaAktualitates .box img{
-    border-radius: 2rem;
-}
 
-.box-container .box img{
-    border-radius: 2rem;
-}
 .sadalaAktualitates .box-container{
     grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
 }
 
+@media (max-width: 495px){
+    .sadalaAktualitates .box img{
+        width: 90%;
+    }
+
+    .sadalaAktualitates .box h2{
+        width: 98%;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 390px){
+    .sadalaAktualitates .box{
+        width: 354px;
+    }
+}
+
+
+
+/* login.php */
 
 .container{
     position: fixed;
@@ -482,6 +664,7 @@ footer img{
     align-items: center;
     justify-content: center;
 }
+
 .boxcenter{
     background-color: #fff;
     width: 22.5%;
@@ -492,27 +675,32 @@ footer img{
     align-items: center;
     justify-content: center;
 }
+
 .login{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .login img{
     width: 16rem;
     margin-bottom: -4rem;
 }
+
 .login p{
     font-size: 2.4rem;
     font-weight: 900;
     margin: 1rem 0;
 }
+
 .login form{ 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .login form .column{
     display: flex;
     flex-direction: column;
@@ -532,6 +720,7 @@ footer img{
     justify-content: center;
     margin-left: 3rem;
 }
+
 .login form .row i{
     background-color: var(--main-color);
     padding: 1rem;
@@ -539,6 +728,7 @@ footer img{
     color: #fff;
     position: absolute;
 }
+
 #btn1{
     background-color: var(--main-color);
     color: #fff;
@@ -546,15 +736,18 @@ footer img{
     font-size: 1.2rem;
     border-radius: 3rem;
 }
+
 #btn1:hover{
     cursor: pointer;
     background-color: #289b17;
 }
+
 .admin{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .moderatoriAdmin{
     margin-top: 10rem;
     display: flex;
@@ -568,21 +761,26 @@ footer img{
     border: .4rem #289b17 solid;
     border-radius: 10px;
 }
+
 th{
     text-align: center;
     height: 4rem;
 }
+
 td{
     text-align: center;
     height: 4rem;
     border-top: .1rem solid #ddd;
 }
+
 tr:hover{
     background-color: var(--bg);
 }
+
 th{
     color: var(--black);
 }
+
 /* parmums.php */
 .parMums{
     padding: 5rem 5%;
@@ -630,12 +828,6 @@ th{
     margin-bottom: 5rem;
 }
 
-.biedri img {
-    width: 40rem;
-    height: 40rem;
-    object-fit: cover;
-}
-
 .biedri h2 {
     font-size: 3rem;
     text-align: center;
@@ -646,71 +838,40 @@ th{
     background: var(--second-color);
 }
 
-.taisnsturis {
-    width: 5rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem;
+.biedri .box-container{
+    gap: 1rem;
 }
 
-.biedri .box {
-    height: 30rem; /* Changed to match the new style */
+.biedri .box{
+    height: 40rem;
     width: 40rem;
-    border-radius: var(--radius); /* Ensure this variable is defined */
-    overflow: hidden;
     position: relative;
-    box-shadow: var(--box-shadow); /* Ensure this variable is defined */
 }
 
-.biedri .box img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.biedri .box img{
+    width: 40rem;
+    height: 40rem;
+    display: block;
 }
 
-.biedri .box .content {
-    width: 100%;
-    height: 100%;
+.biedri .box img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    opacity: 0.5;
+}
+
+.biedri .box .hoverText{
+    display: none;
     position: absolute;
-    top: 6rem;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s, top 0.3s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
 }
 
-.biedri .box:hover .content {
-    opacity: 1;
-    top: 0;
-}
-
-.biedri .box::before {
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 0.8);
-    clip-path: circle(0% at 50% 100%);
-    transition: clip-path 0.3s ease-in-out;
-}
-
-.biedri .box:hover::before {
-    clip-path: circle(100%);
-}
-
-.biedri .box h3 {
-    font-size: 2.5rem;
-    padding-bottom: 0.5rem;
-    color: black; /* Ensure this variable is defined */
-    opacity: 1;
-    transition: opacity 0.3s;
+.biedri .box img:hover + .hoverText {
+    display: inline-block;
 }
 
 
@@ -731,7 +892,6 @@ th{
     flex: 1 1 45rem;
     width: 100%;
     padding: 2rem;
-    border: 1px solid var(--main-color);
 }
 
 form .box{
@@ -747,7 +907,7 @@ form textarea{
     height: 18.5rem;
 }
 
-form .box:focus, .pieteikties form input:focus{
+form .box:focus{
     background: var(--second-color);
 }
 
@@ -764,10 +924,43 @@ form .box:focus, .pieteikties form input:focus{
     display: flex;
     gap: 5rem;
     flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .otrais .icon{
     width: 30rem;
+}
+
+@media (max-width: 805px){
+    .infoParmums{
+        height: 80vh;
+    }
+}
+
+@media (max-width: 791px){
+    .biedri .box-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 590px){
+    .infoParmums{
+        height: 85vh;
+    }
+
+    .tekstsParMums{
+        width: 100%;
+    }
+}
+
+@media (max-width: 390px){
+    .infoParmums{
+        height: 95vh;
+    }
 }
 
 /* pieteikties.php */
@@ -783,9 +976,6 @@ form .box:focus, .pieteikties form input:focus{
 }
 
 .pieteikties form{
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-    border-radius: var(--radius);
     padding: 2rem;
     width: 70%;
     margin: auto;
@@ -793,28 +983,44 @@ form .box:focus, .pieteikties form input:focus{
     flex-direction: column;
     flex-wrap: wrap;
     gap: 3rem;
-    background: var(--main-color);
-    color: white;
+    color: black;
     font-size: 2rem;
     align-items: center;
     padding: 5rem 0;
+    box-shadow: var(--second-color) 0px 30px 60px -12px, var(--main-color) 0px 18px 36px -18px;
 }
 
-.pieteikties input{
+.pieteikties input, .pieteikties textarea{
     width: 70%;
     height: 4rem;
     border-radius: var(--radius);
     font-size: 2rem;
     padding-left: 1rem;
+    box-shadow: var(--box-shadow);
+    background-color: var(--second-color);
 }
 
-.pieteikties .btn{
-    width: 10%;
+.pieteikties input:focus, .pieteikties textarea:focus{
+    background: aliceblue;
 }
 
 .pieteikties textarea{
     width: 70%;
     height: 5rem;
+}
+
+.pieteikties .inputs{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1080px){
+    .pieteikties .inputs{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .notif{
