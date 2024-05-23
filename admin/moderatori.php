@@ -78,9 +78,13 @@
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
                 </tr>
+                <tr>
+                    <td colspan="5"><button class="btn"><i class="fas fa-add"></i></button></td>
+                </tr>
             </table>
         </div>
     </section>
     
-</body>
-</html>
+    <?php
+        require "footerAdmin.php";
+    ?>

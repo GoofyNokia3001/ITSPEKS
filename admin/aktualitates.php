@@ -18,78 +18,82 @@
                     <th>Attēls</th>
                     <th>Nosaukums</th>
                     <th>Datums</th>
-                    <th>Apraksts</th>
+                    <th id="tdApraksts">Apraksts</th>
                     <th class="thButton">Rediģet</th>
                     <th class="thButton">Dzēst</th>
                     
                 </tr>
                 <tr>
-                    <td><img src="https://www.loungelizard.com/wp-content/uploads/top-web-development-companies-2024-1-767x447.webp"></td>
-                    <td><h2>TOP Web Development Companies in 2024</h2></td>
+                    <td><i class='fas fa-check'></i></td>
+                    <td><h3>TOP Web Development Companies in 2024</h3></td>
                     <td>18/05/2024</td>
-                    <td>Lololo</td>
+                    <td>Texts no datu bāzes ar ierobežotu garumu (Pilns bus rediģēšanas lapā)</td>
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
                 </tr>
                 <tr>
-                    <td><img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp"></td>
-                    <td><h2>TOP Web Development Companies in 2024</h2></td>
+                    <td><i class='fas fa-check'></i></td>
+                    <td><h3>TOP Web Development Companies in 2024</h3></td>
                     <td>18/05/2024</td>
-                    <td>Lololo</td>
+                    <td>Texts no datu bāzes ar ierobežotu garumu (Pilns bus rediģēšanas lapā)</td>
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
                 </tr>
                 <tr>
-                    <td><img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp"></td>
-                    <td><h2>TOP Web Development Companies in 2024</h2></td>
+                    <td><i class='fas fa-check'></i></td>
+                    <td><h3>TOP Web Development Companies in 2024</h3></td>
                     <td>18/05/2024</td>
-                    <td>Lololo</td>
+                    <td>Texts no datu bāzes ar ierobežotu garumu (Pilns bus rediģēšanas lapā)</td>
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
                 </tr>
                 <tr>
-                    <td><img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp"></td>
-                    <td><h2>TOP Web Development Companies in 2024</h2></td>
+                    <td><i class='fas fa-check'></i></td>
+                    <td><h3>TOP Web Development Companies in 2024</h3></td>
                     <td>18/05/2024</td>
-                    <td>Lololo</td>
+                    <td>Texts no datu bāzes ar ierobežotu garumu (Pilns bus rediģēšanas lapā)</td>
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
                 </tr>
                 <tr>
-                    <td><img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp"></td>
-                    <td><h2>TOP Web Development Companies in 2024</h2></td>
+                    <td><i class='fas fa-check'></i></td>
+                    <td><h3>TOP Web Development Companies in 2024</h3></td>
                     <td>18/05/2024</td>
-                    <td>Lololo</td>
+                    <td>Texts no datu bāzes ar ierobežotu garumu (Pilns bus rediģēšanas lapā)</td>
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
                 </tr>
                 <tr>
-                    <td><img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp"></td>
-                    <td><h2>TOP Web Development Companies in 2024</h2></td>
+                    <td><i class='fas fa-check'></i></td>
+                    <td><h3>TOP Web Development Companies in 2024</h3></td>
                     <td>18/05/2024</td>
-                    <td>Lololo</td>
+                    <td>Texts no datu bāzes ar ierobežotu garumu (Pilns bus rediģēšanas lapā)</td>
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
                 </tr>
                 <tr>
-                    <td><img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp"></td>
-                    <td><h2>TOP Web Development Companies in 2024</h2></td>
+                    <td><i class='fas fa-check'></i></td>
+                    <td><h3>TOP Web Development Companies in 2024</h3></td>
                     <td>18/05/2024</td>
-                    <td>Lololo</td>
+                    <td>Texts no datu bāzes ar ierobežotu garumu (Pilns bus rediģēšanas lapā)</td>
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
                 </tr>
                 <tr>
-                    <td><img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp"></td>
-                    <td><h2>TOP Web Development Companies in 2024</h2></td>
+                    <td><i class='fas fa-check'></i></td>
+                    <td><h3>TOP Web Development Companies in 2024</h3></td>
                     <td>18/05/2024</td>
-                    <td>Lololo</td>
+                    <td>It’s 2024 and you want to launch a new website (or refresh an existing one), but where do you start?fa-check</td>
                     <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
                     <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><button class="btn"><i class="fas fa-add"></i></button></td>
                 </tr>
             </table>
         </div>
     </section>
     
-</body>
-</html>
+<?php
+    require "footerAdmin.php";
+?>

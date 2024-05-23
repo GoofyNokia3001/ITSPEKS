@@ -747,13 +747,14 @@ footer img{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 18rem;
 }
 
 .moderatoriAdmin{
     margin-top: 10rem;
     display: flex;
     justify-content: center;
-    width: 85vw;
+    width: 95vw;
 }
 
 .moderatoriAdmin table{
@@ -785,6 +786,9 @@ table .heading{
 table .heading:hover{
     background-color: var(--third-color);
 }
+table .heading th{
+    padding: 0 2rem;
+}
 table .Tbtn{
     color: var(--main-color);
     margin: 0;
@@ -814,9 +818,21 @@ td{
     border-top: .1rem solid #ddd;
     border-radius: var(--radius);
 }
+td .btn{
+    display: inline-block;
+    padding: .8rem 47%;
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #fff;
+    background: var(--main-color);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
+}
 tr{
     height: 6rem;
 }
+
 
 tr:hover{
     background-color: var(--second-color);
@@ -825,7 +841,21 @@ tr:hover{
 th{
     color: var(--black);
 }
-
+.Trows{
+    width: 17rem;
+}
+table td input{
+    width: 70%;
+    height: 4rem;
+    font-size: 1.5rem;
+    background-color: #eee;
+    padding: 1.5rem;
+    margin: 1.4rem 0;
+    border-radius: 1rem;
+}
+#tdApraksts{
+    width: 30rem;
+}
 /* parmums.php */
 .parMums{
     padding: 5rem 5%;
@@ -977,7 +1007,14 @@ form .box:focus{
 .otrais .icon{
     width: 30rem;
 }
-
+@media (max-width: 1500px){
+.phoneHide{
+    display: none;
+    }
+    .hid{
+        column-span: 6;
+    }
+}
 @media (max-width: 805px){
     .infoParmums{
         height: 80vh;
