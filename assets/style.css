@@ -6,6 +6,7 @@
     --border: .1rem solid rgba(0, 0, 0, 10%);
     --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 10%);
     --radius: .5rem;
+    --third-color: #289b17;
 }
 
 *{
@@ -229,12 +230,6 @@ span{
     font-size: 3rem;
 }
 
-#aktualitates p{
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
 .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
@@ -246,6 +241,7 @@ span{
     padding: 0;
     background: white;
     margin-bottom: 2rem;
+    height: 100%;
 }
 
 #aktualitates .box img{
@@ -752,29 +748,73 @@ footer img{
     margin-top: 10rem;
     display: flex;
     justify-content: center;
-    width: 75vw;
+    width: 85vw;
 }
 
 .moderatoriAdmin table{
-    font-size: 1.5rem;
+    font-size: 2rem;
     width: 100%;
-    border: .4rem #289b17 solid;
+    border: .4rem var(--second-color) solid;
     border-radius: 10px;
 }
+.aktualitatesAdmin{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    width: 85vw;
+}
 
+.aktualitatesAdmin table{
+    font-size: 2rem;
+    width: 100%;
+    border: .4rem var(--second-color) solid;
+    border-radius: 10px;
+}
+.aktualitatesAdmin table td img{
+    max-width: 25rem;
+}
+table .heading{
+    color: var(--second-color);
+    background-color: var(--main-color);
+}
+table .heading:hover{
+    background-color: var(--third-color);
+}
+table .Tbtn{
+    color: var(--main-color);
+    margin: 0;
+    font-size: 1.6rem;
+    padding: .7rem 1.8rem;
+    border: 1.5px solid var(--main-color);
+    border-radius: var(--radius);
+    background-color: var(--second-color);
+}
+table .Tbtn:hover{
+    background-color: var(--main-color);
+    color: var(--second-color);
+    transition: all .15s ease-in-out;
+}
 th{
     text-align: center;
     height: 4rem;
+    border-radius: var(--radius);
+}
+.thButton{
+    width: 10rem;
 }
 
 td{
     text-align: center;
     height: 4rem;
     border-top: .1rem solid #ddd;
+    border-radius: var(--radius);
+}
+tr{
+    height: 6rem;
 }
 
 tr:hover{
-    background-color: var(--bg);
+    background-color: var(--second-color);
 }
 
 th{
