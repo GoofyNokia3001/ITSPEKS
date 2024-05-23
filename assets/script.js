@@ -22,18 +22,22 @@ x = () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('header')
+    const menuBtn = document.getElementById('menu-btn')
     const currentPage = window.location.pathname.split('/').pop() || 'index.php'
-    if (currentPage !== 'index.php') {
-        header.classList.add('scrolled')
+
+    function updateMenuBtnStyles() {
+        if (window.scrollY > 150 || currentPage !== 'index.php' || window.innerWidth <= 767) {
+            header.classList.add('scrolled')
+            menuBtn.classList.add('scrolled')
+        } else {
+            header.classList.remove('scrolled')
+            menuBtn.classList.remove('scrolled')
+        }
     }
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 150) {
-            header.classList.add('scrolled')
-        } else if (currentPage === 'index.php') {
-            header.classList.remove('scrolled')
-        }
-    })
+    updateMenuBtnStyles()
+
+    window.addEventListener('scroll', updateMenuBtnStyles)
 })
 
 function toggleContent(button) {
