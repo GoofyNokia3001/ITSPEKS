@@ -230,12 +230,6 @@ span{
     font-size: 3rem;
 }
 
-#aktualitates p{
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
 .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
@@ -247,6 +241,7 @@ span{
     padding: 0;
     background: white;
     margin-bottom: 2rem;
+    height: 100%;
 }
 
 #aktualitates .box img{
