@@ -1117,3 +1117,15 @@ form .box:focus{
 .notif.green{
     background: #57a141;
 }
+
+/* admin/index.php */
+.adminIndex{
+    width: 100%;
+    height: 90rem;
+    background: var(--main-color);
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    padding-top: 35rem;
+    font-weight: bold;
+}

@@ -1,15 +1,15 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['admin'])) {
-//     header("Location: login.php");
-//     exit();
-// }
+    $page = "moderatori";
+    require "headerGaligais.php";
+
+    if ($_SESSION['userRole'] !== 'admin') {
+        header("location:./");
+        exit();
+    }
+
+    require "../assets/connect_db.php";
 ?>
 
-<?php
-    $page = "moderatori";
-    require "headerAdmin.php";
-?>
 <body>
     <section class="admin">
         <div class="moderatoriAdmin">
@@ -17,71 +17,54 @@
                 <tr class="heading">
                     <th>Lietotājvārds</th>
                     <th>E-pasts</th>
-                    <th>Admins kurš iedeva atļauju</th>
+                    <!-- <th>Admins kurš iedeva atļauju</th> -->
                     <th class="thButton">Rediģet</th>
                     <th class="thButton">Dzēst</th>
                     
                 </tr>
-                <tr>
-                    <td>RavaldsKristaps</td>
-                    <td>ManPatikOrandzasPrezentacijas@iamnerd.com</td>
-                    <td>Elina</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td>KristovskisRaimonds</td>
-                    <td>MilakaisITSkolotajs@iambest.com</td>
-                    <td>Klim</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td>LiepaAnna</td>
-                    <td>GitarasVirtuozs@rockon.lv</td>
-                    <td>Zane</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td>ZilgalvisMiks</td>
-                    <td>VirtuvesEksperiments@chefmaster.com</td>
-                    <td>Astra</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td>VilksJanis</td>
-                    <td>LasisKungs@fishingfanatic.net</td>
-                    <td>Teodors</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td>OzolinaLiene</td>
-                    <td>Ciemakukulis@bakerylove.com</td>
-                    <td>Rūta</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td>BerzinsMartins</td>
-                    <td>LeopardaPukains@junglefever.com</td>
-                    <td>Dace</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td>KuzminsViktors</td>
-                    <td>SpagetiEntuziasts@pastalover.com</td>
-                    <td>Inese</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
+                <?php
+                    $moderatori_SQL = "SELECT * FROM itspeks_moderatori WHERE Izdzests != 1";
+                    $atlasa_moderatori_SQL = mysqli_query($savienojums, $moderatori_SQL);
+
+                    while($moderators = mysqli_fetch_array($atlasa_moderatori_SQL)){
+                        echo "
+                            <tr>
+                                <td>{$moderators['Lietotajvards']}</td>
+                                <td>{$moderators['Epasts']}</td>
+                                <td>
+                                    <form method='POST' action='edit_moderatoru.php'>
+                                        <button type='submit' name='apskatitModeratoru' class='Tbtn' value='{$moderators['ModeratorsID']}'><i class='fas fa-edit'></i></button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form method='POST'>
+                                        <input type='hidden' name='delete_id' value='{$moderators['ModeratorsID']}'>
+                                        <button type='submit' name='nodzestModeratoru' class='Tbtn' value='{$moderators['ModeratorsID']}'><i class='fas fa-trash'></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        ";
+                    }
+                ?>
                 <tr>
                     <td colspan="5"><button class="btn"><i class="fas fa-add"></i></button></td>
                 </tr>
             </table>
+            <?php
+                if(isset($_POST['nodzestModeratoru'])){
+                    $id = $_POST['delete_id'];
+                    $sql = "UPDATE itspeks_moderatori SET Izdzests = 1 WHERE ModeratorsID = '$id'";
+                    mysqli_query($savienojums, $sql);
+                    echo "<script>
+                            window.location.href = window.location.href;
+                            if(window.performance){
+                                if(window.performance.navigation.type == 1){
+                                    location.reload(true);
+                                }
+                            }
+                        </script>";
+                }
+            ?>
         </div>
     </section>
     

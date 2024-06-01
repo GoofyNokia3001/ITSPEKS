@@ -31,7 +31,7 @@
                         </form>
                         <div class="info">
                             <?php
-                                require "../assets/crud_operations.php";
+                                require "assets/autorizacija.php";
                             ?>
                         </div>
                     </div>

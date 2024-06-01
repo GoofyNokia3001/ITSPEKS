@@ -1,14 +1,6 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['admin'])) {
-//     header("Location: login.php");
-//     exit();
-// }
-?>
-
-<?php
     $page = "vakances";
-    require "headerAdmin.php";
+    require "headerGaligais.php";
 ?>
 <body>
     <section class="admin">
