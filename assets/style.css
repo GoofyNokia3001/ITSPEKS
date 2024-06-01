@@ -1129,3 +1129,17 @@ form .box:focus{
     padding-top: 35rem;
     font-weight: bold;
 }
+
+/* admin/pievienot_aktualitate.php */
+.adminTextArea{
+    width: 70%;
+    font-size: 1.5rem;
+    background-color: #eee;
+    padding: 1.5rem;
+    margin: 1.4rem 0;
+    border-radius: 1rem;
+}
+
+.admin textarea{
+    resize: none;
+}

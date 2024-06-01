@@ -1,6 +1,7 @@
 <?php
     $page = "pieteikumi";
     require "headerGaligais.php";
+    require "../assets/connect_db.php";
 ?>
 <body>
     <section class="admin">

@@ -17,10 +17,8 @@
                 <tr class="heading">
                     <th>Lietotājvārds</th>
                     <th>E-pasts</th>
-                    <!-- <th>Admins kurš iedeva atļauju</th> -->
                     <th class="thButton">Rediģet</th>
                     <th class="thButton">Dzēst</th>
-                    
                 </tr>
                 <?php
                     $moderatori_SQL = "SELECT * FROM itspeks_moderatori WHERE Izdzests != 1";
@@ -37,7 +35,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <form method='POST'>
+                                    <form method='POST' onsubmit='return confirm(\"Vai tiešām vēlēs dzēst?\");'>
                                         <input type='hidden' name='delete_id' value='{$moderators['ModeratorsID']}'>
                                         <button type='submit' name='nodzestModeratoru' class='Tbtn' value='{$moderators['ModeratorsID']}'><i class='fas fa-trash'></i></button>
                                     </form>
@@ -47,7 +45,11 @@
                     }
                 ?>
                 <tr>
-                    <td colspan="5"><button class="btn"><i class="fas fa-add"></i></button></td>
+                    <td colspan="5">
+                        <form method='POST' action='pievienot_moderatoru.php'>
+                            <button type='submit' class="btn"><i class="fas fa-add"></i></button>
+                        </form>
+                    </td>
                 </tr>
             </table>
             <?php

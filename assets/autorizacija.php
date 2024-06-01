@@ -7,12 +7,10 @@
         $lietotajvards = mysqli_real_escape_string($savienojums, $_POST["usr"]);
         $parole = mysqli_real_escape_string($savienojums, $_POST["psswrd"]);
         
-        // Check in the administrators table
         $sqlAdmin = "SELECT * FROM itspeks_administratori WHERE Lietotajvards = '$lietotajvards'";
         $rezultatsAdmin = mysqli_query($savienojums, $sqlAdmin);
 
-        // Check in the moderators table
-        $sqlModerator = "SELECT * FROM itspeks_moderatori WHERE Lietotajvards = '$lietotajvards'";
+        $sqlModerator = "SELECT * FROM itspeks_moderatori WHERE Lietotajvards = '$lietotajvards' AND Izdzests != 1";
         $rezultatsModerator = mysqli_query($savienojums, $sqlModerator);
 
         if (mysqli_num_rows($rezultatsAdmin) == 1) {

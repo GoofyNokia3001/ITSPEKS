@@ -15,10 +15,11 @@
 
 # Back-end:
 - [x] Autorizacija ar atsevišķam tiesībam (admin, moderators) (Elīna)
-- [ ] Moderatoru attēlošana, pievienošana, dzēšana
-- [ ] Aktualitātes ierakstu attēlošana, pievienošana, dzēšana
-- [ ] Aktualitātes ierakstu attēlošana no lietotāja pusē
-- [ ] Vakances attēlošana, pievienošana, dzēšana
-- [ ] Vakances attēlošana no lietotāja pusē
-- [ ] Vakances filtrēšana
-- [ ] Pieteikšana vakancēm attēlošana, statusa maiņa
+- [x] Moderatoru attēlošana, pievienošana, dzēšana (Elīna)
+- [x] Aktualitātes ierakstu attēlošana, pievienošana, dzēšana (Elīna)
+- [ ] Aktualitātes ierakstu attēlošana no lietotāja pusē (Kļims)
+- [ ] Vakances attēlošana, pievienošana, dzēšana (Elīna)
+- [ ] Vakances attēlošana no lietotāja pusē (Kļims)
+- [ ] Vakances filtrēšana (Kļims)
+- [ ] Pieteikšana vakancēm attēlošana, statusa maiņa (Kļims)
+- [ ] Iespēja pieteikties vakancēm (Kļims)
