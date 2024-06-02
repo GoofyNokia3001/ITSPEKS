@@ -1,132 +1,111 @@
 <?php
     $page = "vakances";
     require "headerGaligais.php";
+    require "../assets/connect_db.php";
 ?>
 <body>
     <section class="admin">
         <div class="moderatoriAdmin">
             <table>
                 <tr class="heading">
-                    <th>Bilde</th>
-                    <th>Vakance</th>
+                    <th>Attēls</th>
+                    <th>Amats</th>
                     <th>Uzņēmums</th>
                     <th class="phoneHide">Adrese</th>
                     <th class="phoneHide">Apraksts</th>
+                    <th class="phoneHide">Pienākumi</th>
                     <th class="phoneHide">Prasmes</th>
                     <th class="phoneHide">Valodas</th>
                     <th>Alga</th>
-                    <th class="phoneHide">Papildus info</th>
+                    <th class="phoneHide">Kontaktpersona</th>
                     <th class="thButton">Rediģet</th>
                     <th class="thButton">Dzēst</th>
                 </tr>
+                <?php
+                    $vakances_SQL = "SELECT * FROM itspeks_vakances";
+                    $atlasa_vakances_SQL = mysqli_query($savienojums, $vakances_SQL);
+
+                    while($vakance = mysqli_fetch_array($atlasa_vakances_SQL)){
+                        if(empty($vakance['Attels_URL'])){
+                            $attels = "<i class='fas fa-times'></i>";
+                        }else{
+                            $attels = "<i class='fas fa-check'></i>";
+                        }
+
+                        if(empty($vakance['Apraksts'])){
+                            $apraksts = "<i class='fas fa-times'></i>";
+                        }else{
+                            $apraksts = "<i class='fas fa-check'></i>";
+                        }
+
+                        if(empty($vakance['Pienakumi'])){
+                            $pienakumi = "<i class='fas fa-times'></i>";
+                        }else{
+                            $pienakumi = "<i class='fas fa-check'></i>";
+                        }
+
+                        if(empty($vakance['Prasmes'])){
+                            $prasmes = "<i class='fas fa-times'></i>";
+                        }else{
+                            $prasmes = "<i class='fas fa-check'></i>";
+                        }
+
+                        if(empty($vakance['Valodas'])){
+                            $valodas = "<i class='fas fa-times'></i>";
+                        }else{
+                            $valodas = "<i class='fas fa-check'></i>";
+                        }
+
+                        echo "
+                            <tr>
+                                <td class='phoneHide'>$attels</td>
+                                <td>{$vakance['Amats']}</td>
+                                <td>{$vakance['Uznemums']}</td>
+                                <td>{$vakance['Atrasanas_vieta']}</td>
+                                <td class='phoneHide'>$apraksts</td>
+                                <td class='phoneHide'>$pienakumi</td>
+                                <td class='phoneHide'>$prasmes</td>
+                                <td class='phoneHide'>$valodas</td>
+                                <td>{$vakance['Alga']}</td>
+                                <td class='phoneHide'>{$vakance['Kontaktpersona']}</td>
+                                <td>
+                                    <form method='POST' action='edit_vakance.php'>
+                                        <button type='submit' name='apskatitVakance' class='Tbtn' value='{$vakance['Vakances_ID']}'><i class='fas fa-edit'></i></button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form method='POST' onsubmit='return confirm(\"Vai tiešām vēlēs dzēst?\");'>
+                                        <input type='hidden' name='delete_id' value='{$vakance['Vakances_ID']}'>
+                                        <button type='submit' name='nodzestVakance' class='Tbtn' value='{$vakance['Vakances_ID']}'><i class='fas fa-trash'></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        ";
+                    }
+                ?>
                 <tr>
-                    <td><i class="fas fa-check"></i></td>
-                    <td>INFORMĀCIJAS SISTĒMU PROGRAMMĒTĀJS</td>
-                    <td>Valsts akciju sabiedrība "Latvijas dzelzceļš"</td>
-                    <td class="phoneHide">LATVIJA, Vilhelma Purvīša iela 21, Rīga</td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide">Valsts valodas...</td>
-                    <td>2700 EUR</td>
-                    <td class="phoneHide">Darbinieka amats...</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-times"></i></td>
-                    <td>Informācijas sistēmu TESTĒTĀJS</td>
-                    <td>SIA "Sinatrade"</td>
-                    <td class="phoneHide">LATVIJA, Rītupes iela 21 - 2, Rīga</td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide">Arābu valodas...</td>
-                    <td>1600 EUR</td>
-                    <td class="phoneHide">Uzņēmuma līgums...</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-check"></i></td>
-                    <td>WEB IZSTRĀDĀTĀJS</td>
-                    <td>SIA "Web Solutions"</td>
-                    <td class="phoneHide">LATVIJA, Krišjāņa Valdemāra iela 8, Rīga</td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide"><i class="fas fa-check"></i></td>
-                    <td class="phoneHide">Angļu valodas...</td>
-                    <td>2200 EUR</td>
-                    <td class="phoneHide">Darbinieka amats...</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-check"></i></td>
-                    <td>DATU ANALĪTIĶIS</td>
-                    <td>AS "Data Pro"</td>
-                    <td class="phoneHide">LATVIJA, Miera iela 15, Rīga</td>
-                    <td class="phoneHide"><i class="fas fa-check"></i></td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide">Latviešu valodas...</td>
-                    <td>3000 EUR</td>
-                    <td class="phoneHide">Darbinieka amats...</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-times"></i></td>
-                    <td>SISTĒMU ADMINISTRATORS</td>
-                    <td>SIA "Tech Support"</td>
-                    <td class="phoneHide">LATVIJA, Brīvības iela 50, Rīga</td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide"><i class="fas fa-check"></i></td>
-                    <td class="phoneHide">Krievu valodas...</td>
-                    <td>1800 EUR</td>
-                    <td class="phoneHide">Uzņēmuma līgums...</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-check"></i></td>
-                    <td>PROGRAMMATŪRAS IZSTRĀDĀTĀJS</td>
-                    <td>AS "IT Solutions"</td>
-                    <td class="phoneHide">LATVIJA, Elizabetes iela 10, Rīga</td>
-                    <td class="phoneHide"><i class="fas fa-check"></i></td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide">Vācu valodas...</td>
-                    <td>2500 EUR</td>
-                    <td class="phoneHide">Darbinieka amats...</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-times"></i></td>
-                    <td>TEHNISKAIS ATBALSTS</td>
-                    <td>SIA "Support Plus"</td>
-                    <td class="phoneHide">LATVIJA, Lāčplēša iela 18, Rīga</td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide"><i class="fas fa-check"></i></td>
-                    <td class="phoneHide">Franču valodas...</td>
-                    <td>1700 EUR</td>
-                    <td class="phoneHide">Uzņēmuma līgums...</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-check"></i></td>
-                    <td>MĀRKETINGA SPECIĀLISTS</td>
-                    <td>AS "Market Leader"</td>
-                    <td class="phoneHide">LATVIJA, Dzirnavu iela 13, Rīga</td>
-                    <td class="phoneHide"><i class="fas fa-check"></i></td>
-                    <td class="phoneHide"><i class="fas fa-times"></i></td>
-                    <td class="phoneHide">Spāņu valodas...</td>
-                    <td>2600 EUR</td>
-                    <td class="phoneHide">Darbinieka amats...</td>
-                    <td><button class="Tbtn"><i class="fas fa-edit"></i></button></td>
-                    <td><button class="Tbtn"><i class="fas fa-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td colspan="11" class="hid"><button class="btn"><i class="fas fa-add"></i></button></td>
+                    <td colspan="11" class="hid">
+                        <form method='POST' action='pievienot_vakance.php'>
+                            <button type='submit' class="btn"><i class="fas fa-add"></i></button>
+                        </form>
+                    </td>
                 </tr>
             </table>
+            <?php
+                if(isset($_POST['nodzestVakance'])){
+                    $id = $_POST['delete_id'];
+                    $sql = "DELETE FROM itspeks_vakances WHERE Vakances_ID = '$id'";
+                    mysqli_query($savienojums, $sql);
+                    echo "<script>
+                            window.location.href = window.location.href;
+                            if(window.performance){
+                                if(window.performance.navigation.type == 1){
+                                    location.reload(true);
+                                }
+                            }
+                        </script>";
+                }
+            ?>
         </div>
     </section>
     

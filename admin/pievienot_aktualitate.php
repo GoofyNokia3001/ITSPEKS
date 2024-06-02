@@ -40,7 +40,6 @@
                     $teksts = $_POST['teksts'];
 
                     if($virsraksts != '' && $datums != '' && $teksts != ''){
-                        $par = password_hash($parole1, PASSWORD_DEFAULT);
                         $sql = "INSERT INTO itspeks_aktualitates (Virsraksts, Teksts, Attels_URL, Datums) VALUES ('$virsraksts', '$teksts', '$attels', '$datums')";
                         if(mysqli_query($savienojums, $sql)){
                             echo "<div class='notif green'>Pievienošana ir veiksmīga!</div>";
