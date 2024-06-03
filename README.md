@@ -19,7 +19,7 @@
 - [x] Aktualitātes ierakstu attēlošana, pievienošana, dzēšana (Elīna)
 - [ ] Aktualitātes ierakstu attēlošana no lietotāja pusē (Kļims)
 - [x] Vakances attēlošana, pievienošana, dzēšana (Elīna)
-- [ ] Vakances attēlošana no lietotāja pusē (Elīna)
+- [x] Vakances attēlošana no lietotāja pusē (Elīna)
 - [ ] Vakances filtrēšana (Kļims)
 - [ ] Pieteikšana vakancēm attēlošana, statusa maiņa (Kļims)
 - [ ] Iespēja pieteikties vakancēm (Kļims)

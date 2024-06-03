@@ -71,6 +71,12 @@ header.scrolled {
     font-weight: 700;
 }
 
+.info{
+    font-size: 1.5rem;
+    color: darkred;
+    margin-top: 2rem;
+}
+
 header.scrolled .logo{
     color: var(--main-color);
 }
@@ -1142,4 +1148,45 @@ form .box:focus{
 
 .admin textarea{
     resize: none;
+}
+
+/* admin/pievienot_vakance.php */
+.tooltip-container {
+    position: absolute;
+    display: inline-block;
+    margin: 1.5rem;
+}
+
+.tooltip-circle {
+    width: 24px;
+    height: 24px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 20rem;
+    height: 15rem;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }

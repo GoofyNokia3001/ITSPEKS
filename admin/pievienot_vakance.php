@@ -37,15 +37,33 @@
                     </tr>
                     <tr>
                         <th>Pienākumi</th>
-                        <td><textarea class="adminTextArea" name="pienakumi" placeholder="Pienākumi"></textarea></td>
+                        <td>
+                            <textarea class="adminTextArea" name="pienakumi" placeholder="Pienākumi"></textarea>
+                            <div class="tooltip-container">
+                                <div class="tooltip-circle">!</div>
+                                <div class="tooltip-text">Katru atsevišķu ierakstu ieteicams rakstīt ar atstarpi un semikolu. Piemēram: <br> Ieraksts1; Ieraksts2</div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <th>Prasmes</th>
-                        <td><textarea class="adminTextArea" name="prasmes" placeholder="Prasmes *" required></textarea></td>
+                        <td>
+                            <textarea class="adminTextArea" name="prasmes" placeholder="Prasmes *" required></textarea>
+                            <div class="tooltip-container">
+                                <div class="tooltip-circle">!</div>
+                                <div class="tooltip-text">Katru atsevišķu ierakstu ieteicams rakstīt ar atstarpi un semikolu. Piemēram: <br> Ieraksts1; Ieraksts2</div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <th>Valodas</th>
-                        <td><input type="text" name="valodas" placeholder="Valodas"></td>
+                        <td>
+                            <input type="text" name="valodas" placeholder="Valodas">
+                            <div class="tooltip-container">
+                                <div class="tooltip-circle">!</div>
+                                <div class="tooltip-text">Katru atsevišķu ierakstu ieteicams rakstīt ar atstarpi un semikolu. Piemēram: <br> Ieraksts1; Ieraksts2</div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <th>Alga</th>
