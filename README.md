@@ -24,3 +24,4 @@
 - [ ] Pieteikšana vakancēm attēlošana, statusa maiņa (Kļims)
 - [ ] Iespēja pieteikties vakancēm (Kļims)
 - [ ] Divas valodas (Kļims)
+- [ ] Funkcija, lai sazināties (Kļims)
