@@ -1,5 +1,5 @@
 <?php
-    $page = "vakances";
+    $page = "aktualitates";
     require "headerGaligais.php";
     require "../assets/connect_db.php";
 ?>

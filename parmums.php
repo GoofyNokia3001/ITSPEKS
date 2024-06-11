@@ -43,6 +43,9 @@
                     <input type="tel" name="talrunis" placeholder="Tālrunis" class="box" required>
                     <textarea name="zinojums" placeholder="Ziņa" class="box" required></textarea>
                     <button type="submit" class="btn" name="nosutit">Sazināties</button>
+                    <?php
+                    require 'assets/mail.php'; 
+                    ?>
                 </form>
             </div>
         </div>

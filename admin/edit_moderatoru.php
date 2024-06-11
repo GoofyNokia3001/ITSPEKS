@@ -1,5 +1,5 @@
 <?php
-    $page = "vakances";
+    $page = "moderatori";
     require "headerGaligais.php";
 
     if ($_SESSION['userRole'] !== 'admin') {
