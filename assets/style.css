@@ -1124,6 +1124,30 @@ form .box:focus{
     background: #57a141;
 }
 
+#pazinojums{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    width: 100%;
+    text-align: center;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 2rem;
+    display: block;
+    padding: 3rem 9%;
+}
+#pazinojums p{
+    animation: blinker 2s linear infinite;
+}
+@keyframes blinker {
+    50%{
+        opacity: 20%;
+    }
+}
+#pazinojums i:hover{
+    cursor: pointer;
+}
 /* admin/index.php */
 .adminIndex{
     width: 100%;

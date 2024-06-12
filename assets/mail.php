@@ -44,11 +44,11 @@
 
             $mail->send();
             echo "<div id='pazinojums'>
-                        <p>
-                        Ziņa nosūtīta! Sazināsimies ar jums pavisam drīz!
-                        <a onclick='x()'><i class='fas fa-times'></i></a>
-                        </p>
-                    </div>";
+                    <p>
+                    Ziņa nosūtīta! Sazināsimies ar jums pavisam drīz!
+                    <a onclick='x()'><i class='fas fa-times'></i></a>
+                    </p>
+                </div>";
         } catch (Exception $e) {
             echo "System Error: {$mail->ErrorInfo}";
         }
