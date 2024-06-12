@@ -22,26 +22,29 @@
         <h2>AKTUALITĀTES</h2>
         <p>IEPAZĪSTIETIES AR JAUNĀKAJĀM AKTUALITĀTĒM IT JOMĀ.</p>
         <div class="box-container">
-            <div class="box radius">
-                <img src="https://www.loungelizard.com/wp-content/uploads/top-web-development-companies-2024-1-767x447.webp" class="radius">
-                <p>2024.gada 23.maija</p>
-                <a href="" class="aktualVirsraksts">Jauns sasniegums mākslīgā intelekta jomā</a></div>
-            <div class="box radius">
-                <img src="https://www.loungelizard.com/wp-content/uploads/Best-Web-Design-Companies-in-2024-767x447.webp" class="radius">
-                <p>2024.gada 22.maija</p>
-                <a href="" class="aktualVirsraksts">Revolucionāri jaunumi kvantu skaitļošanā</a></div>
-            <div class="box radius">
-                <img src="https://www.loungelizard.com/wp-content/uploads/Top-10-Best-Financial-Website-Designs-1-767x447.webp" class="radius">
-                <p>2024.gada 21.maija</p>
-                <a href="" class="aktualVirsraksts">Blokķēdes tehnoloģija ienāk veselības aprūpē</a>
-            </div>
+            <?php
+                require "assets/connect_db.php";
+
+                $aktualitatesSQL = "SELECT * FROM itspeks_aktualitates ORDER BY Datums DESC LIMIT 3";
+                $atlasaAktualitates = mysqli_query($savienojums, $aktualitatesSQL);
+
+                if(mysqli_num_rows($atlasaAktualitates) > 0){
+                    while($aktualitate = mysqli_fetch_assoc($atlasaAktualitates)){
+                        echo "
+                            <div class='box radius'>
+                                <img src='{$aktualitate['Attels_URL']}'>
+                                <p>".date("d.m.Y", strtotime($aktualitate['Datums']))."</h2>
+                                <a href='aktualitates.php' class='aktualVirsraksts'>{$aktualitate['Virsraksts']}</div>
+                            </div>
+                        ";
+                    }
+                }else{
+                    echo "Nav nevienas aktualitāte, ko attēlot!";
+                }
+            ?>
         </div>
         <a href="aktualitates.php" class="btn">Skatīt vairāk</a>
     </section>
-    <section id="kontakti">
-
-    </section>
-
 <?php
     require "footer.php";
 ?>

@@ -3,6 +3,37 @@
 ?>
 
 <div class="pieteikties">
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['pieteikties'])){
+                require("assets/connect_db.php");
+                $vards_ievade = mysqli_real_escape_string($savienojums, $_POST['vards']);
+                $uzvards_ievade = mysqli_real_escape_string($savienojums, $_POST['uzvards']);
+                $personas_kods_ievade = mysqli_real_escape_string($savienojums, $_POST['persKods']);
+                $talrunis_ievade = mysqli_real_escape_string($savienojums, $_POST['talrunis']);
+                $epasts_ievade = mysqli_real_escape_string($savienojums, $_POST['epasts']);
+                $izglitiba_ievade = mysqli_real_escape_string($savienojums, $_POST['izglitiba']);
+                $darba_pieredze_ievade = mysqli_real_escape_string($savienojums, $_POST['darbaPieredze']);
+                $cv_ievade = mysqli_real_escape_string($savienojums, $_POST['cv']);
+                $motivacijas_vestule_ievade = mysqli_real_escape_string($savienojums, $_POST['motVestule']);
+                $komentars_ievade = mysqli_real_escape_string($savienojums, $_POST['komentari']);
+
+                if($vards_ievade != "" and $uzvards_ievade != "" and $personas_kods_ievade != "" and $talrunis_ievade != "" and $epasts_ievade != "" and $izglitiba_ievade != "" and $darba_pieredze_ievade != ""){
+                        $pieteikums_SQL = "INSERT INTO itspeks_pieteikumi (Vards, Uzvards, Personas_kods, Talrunis, Epasts, Izglitiba, Darba_pieredze, CV, Motivacijas_vestule, Komentari, Statuss) VALUES ('$vards_ievade', '$uzvards_ievade', '$personas_kods_ievade', '$talrunis_ievade', '$epasts_ievade', '$izglitiba_ievade', '$darba_pieredze_ievade', '$cv_ievade', '$motivacijas_vestule_ievade', '$komentars_ievade', default)";
+
+                        if(mysqli_query($savienojums, $pieteikums_SQL)){
+                            echo "<div class='notif green'>Pieteikšanas ir nosutījas veiksmīgi! Tuvakājā laikā sazinaties ar Jūms!</div>";
+                            header("Refresh: 2, url=./");
+                        }else{
+                            echo "<div class='notif red'>Pieteikšana nav veiksmīga!</div>";
+                            header("Refresh: 2, url=./");
+                        }
+                }else{
+                    echo "<div class='notif red'>Kaut kas nav ievadīts!</div>";
+                    header("Refresh: 2, url=./");
+                }
+            }else{
+        ?>
     <h1>PIETEIKŠANA VAKANCĒM</h1>
     <form method="POST">
         <input type="text" name="vards" placeholder="Vārds" required>
@@ -21,8 +52,15 @@
             <input type="file" name="motVestule" class="inputFile">
         </div>
         <textarea name="komentari" placeholder="Komentāri" class="box"></textarea>
-        <button type="submit" class="btn">Pieteikties</button>
+        <button type="submit" class="btn" name="pieteikties">Pieteikties</button>
     </form>
+    <?php
+            }
+        }else{
+            echo "<div class='notif red'>Kaut kas nogāja grezi! Atgriezies sākumlapā, un mēģini vēlreiz</div>";
+            header("Refresh: 2, url=./");
+        }
+    ?>
 </div>
 
 <?php
