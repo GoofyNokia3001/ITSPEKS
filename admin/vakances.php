@@ -22,7 +22,7 @@
                     <th class="thButton">Dzēst</th>
                 </tr>
                 <?php
-                    $vakances_SQL = "SELECT * FROM itspeks_vakances";
+                    $vakances_SQL = "SELECT * FROM itspeks_vakances WHERE Izdzests != 1";
                     $atlasa_vakances_SQL = mysqli_query($savienojums, $vakances_SQL);
 
                     while($vakance = mysqli_fetch_array($atlasa_vakances_SQL)){
@@ -94,7 +94,7 @@
             <?php
                 if(isset($_POST['nodzestVakance'])){
                     $id = $_POST['delete_id'];
-                    $sql = "DELETE FROM itspeks_vakances WHERE Vakances_ID = '$id'";
+                    $sql = "UPDATE itspeks_vakances SET Izdzests = 1 WHERE Vakances_ID = '$id'";
                     mysqli_query($savienojums, $sql);
                     echo "<script>
                             window.location.href = window.location.href;

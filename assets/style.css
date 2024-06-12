@@ -240,6 +240,7 @@ span{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
     gap: 3rem;
+    margin-bottom: 2rem;
 }
 
 #aktualitates .box{
@@ -266,8 +267,9 @@ span{
     color: var(--main-color);
 }
 
-#aktualitates .box p{
-    font-size: 1.5rem;
+#aktualitates p{
+    font-size: 2rem;
+    text-align: center;
     padding: 1rem 1.5rem;
     line-height: 2;
 }
@@ -463,6 +465,14 @@ footer img{
     border-color: var(--main-color);
 }
 
+.parFiltri{
+    color: darkred;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 15rem;
+}
+
 .sarakstsArVakancem{
     width: 70%;
     display: flex;
@@ -502,7 +512,7 @@ footer img{
     max-height: 15rem;
 }
 
-.square span{
+.square span, .pieteikties span{
     background: var(--second-color);
     font-weight: bold;
 }
@@ -593,7 +603,7 @@ footer img{
     position: relative;
 }
 
-.sadalaAktualitates .box img {
+.sadalaAktualitates .box img{
     width: 100%;
     height: 30rem;
 }
@@ -753,8 +763,6 @@ footer img{
 
 .moderatoriAdmin{
     margin-top: 10rem;
-    display: flex;
-    justify-content: center;
     width: 95vw;
 }
 
@@ -1079,12 +1087,11 @@ form .box:focus{
     border-radius: var(--radius);
     font-size: 2rem;
     padding-left: 1rem;
-    box-shadow: var(--box-shadow);
-    background-color: var(--second-color);
+    background-color: #eee;
 }
 
 .pieteikties input:focus, .pieteikties textarea:focus{
-    background: aliceblue;
+    background: var(--second-color);
 }
 
 .pieteikties textarea{

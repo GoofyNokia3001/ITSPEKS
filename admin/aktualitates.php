@@ -16,7 +16,7 @@
                     <th class="thButton">Dzēst</th>
                 </tr>
                 <?php
-                    $aktualitates_SQL = "SELECT * FROM itspeks_aktualitates ORDER BY Datums DESC";
+                    $aktualitates_SQL = "SELECT * FROM itspeks_aktualitates  WHERE Izdzests != 1 ORDER BY Datums DESC";
                     $atlasa_aktualitates_SQL = mysqli_query($savienojums, $aktualitates_SQL);
 
                     while($ieraksts = mysqli_fetch_array($atlasa_aktualitates_SQL)){
@@ -65,7 +65,7 @@
             <?php
                 if(isset($_POST['nodzestIeraksts'])){
                     $id = $_POST['delete_id'];
-                    $sql = "DELETE FROM itspeks_aktualitates WHERE Aktualitates_ID = '$id'";
+                    $sql = "UPDATE itspeks_aktualitates SET Izdzests = 1 WHERE Aktualitates_ID = '$id'";
                     mysqli_query($savienojums, $sql);
                     echo "<script>
                             window.location.href = window.location.href;

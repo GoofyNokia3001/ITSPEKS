@@ -1,12 +1,14 @@
 <?php
+    $page = "vakances";
     require "header.php";
 ?>
 
 <div class="pieteikties">
     <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            if(isset($_POST['iesniegt'])){
-                require("assets/connect_db.php");
+        require("assets/connect_db.php");
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['iesniegt'])) {
                 $vakanci_ievade = mysqli_real_escape_string($savienojums, $_POST['vakanci']);
                 $vards_ievade = mysqli_real_escape_string($savienojums, $_POST['vards']);
                 $uzvards_ievade = mysqli_real_escape_string($savienojums, $_POST['uzvards']);
@@ -19,37 +21,38 @@
                 $motivacijas_vestule_ievade = mysqli_real_escape_string($savienojums, $_POST['motVestule']);
                 $komentars_ievade = mysqli_real_escape_string($savienojums, $_POST['komentari']);
 
-                if($vards_ievade != "" and $uzvards_ievade != "" and $personas_kods_ievade != "" and $talrunis_ievade != "" and $epasts_ievade != "" and $izglitiba_ievade != "" and $darba_pieredze_ievade != ""){
-                        $pieteikums_SQL = "INSERT INTO itspeks_pieteikumi (Vakance_ID, Vards, Uzvards, Personas_kods, Talrunis, Epasts, Izglitiba, Darba_pieredze, CV, Motivacijas_vestule, Komentari, Statuss) VALUES ('$vakanci_ievade', '$vards_ievade', '$uzvards_ievade', '$personas_kods_ievade', '$talrunis_ievade', '$epasts_ievade', '$izglitiba_ievade', '$darba_pieredze_ievade', '$cv_ievade', '$motivacijas_vestule_ievade', '$komentars_ievade', default)";
+                if ($vards_ievade != "" && $uzvards_ievade != "" && $personas_kods_ievade != "" && $talrunis_ievade != "" && $epasts_ievade != "" && $izglitiba_ievade != "") {
+                    $pieteikums_SQL = "INSERT INTO itspeks_pieteikumi (Vakance_ID, Vards, Uzvards, Personas_kods, Talrunis, Epasts, Izglitiba, Darba_pieredze, CV, Motivacijas_vestule, Komentari, Statuss) VALUES ('$vakanci_ievade', '$vards_ievade', '$uzvards_ievade', '$personas_kods_ievade', '$talrunis_ievade', '$epasts_ievade', '$izglitiba_ievade', '$darba_pieredze_ievade', '$cv_ievade', '$motivacijas_vestule_ievade', '$komentars_ievade', default)";
 
-                        if(mysqli_query($savienojums, $pieteikums_SQL)){
-                            echo "<div class='notif green'>Pieteikšanas ir nosutījas veiksmīgi! Tuvakājā laikā sazinaties ar Jūms!</div>";
-                            header("Refresh: 2, url=./");
-                        }else{
-                            echo "<div class='notif red'>Pieteikšana nav veiksmīga!</div>";
-                            header("Refresh: 2, url=./");
-                        }
-                }else{
+                    if (mysqli_query($savienojums, $pieteikums_SQL)) {
+                        echo "<div class='notif green'>Pieteikšanās ir nosūtīta veiksmīgi! Tuvākajā laikā sazināsimies ar Jums!</div>";
+                        header("Refresh: 2, url=./vakances.php");
+                    } else {
+                        echo "<div class='notif red'>Pieteikšana nav veiksmīga!</div>";
+                        header("Refresh: 2, url=./vakances.php");
+                    }
+                } else {
                     echo "<div class='notif red'>Kaut kas nav ievadīts!</div>";
-                    header("Refresh: 2, url=./");
+                    header("Refresh: 2, url=./vakances.php");
                 }
-            }else{
+            } else {
+                $idAmats = $_POST['pieteikties'];
+                $amatsSQL = "SELECT Amats FROM itspeks_vakances WHERE Vakances_ID = '$idAmats'";
+                $amatsResult = mysqli_query($savienojums, $amatsSQL);
+                $amatsRow = mysqli_fetch_assoc($amatsResult);
+                $amats = $amatsRow['Amats'];
         ?>
-    <h1>PIETEIKŠANA VAKANCĒM <br>
-        <span>
-            <?php 
-                echo $_POST['pieteikties'];
-            ?>
-        </span>
+    <h1>PIETEIKŠANĀS VAKANCĒM <br>
+        <span><?php echo $amats; ?></span>
     </h1>
     <form method="POST">
-        <input type="text" name="vakanci" class="box" value="<?php echo $_POST['pieteikties']?>" readonly required>
-        <input type="text" name="vards" placeholder="Vārds" required>
-        <input type="text" name="uzvards" placeholder="Uzvārds" required>
-        <input type="text" name="persKods" placeholder="Personas kods" required>
-        <input type="text" name="talrunis" placeholder="Tālrunis" required>
-        <input type="email" name="epasts" placeholder="E-pasts" required>
-        <input type="text" name="izglitiba" placeholder="Izglitība" required>
+        <input type="text" name="vakanci" class="box" value="<?php echo $amats; ?>" readonly required>
+        <input type="text" name="vards" placeholder="Vārds *" required>
+        <input type="text" name="uzvards" placeholder="Uzvārds *" required>
+        <input type="text" name="persKods" placeholder="Personas kods *" required>
+        <input type="text" name="talrunis" placeholder="Tālrunis *" required>
+        <input type="email" name="epasts" placeholder="E-pasts *" required>
+        <input type="text" name="izglitiba" placeholder="Izglītība *" required>
         <input type="text" name="darbaPieredze" placeholder="Darba pieredze">
         <div class="inputs">
             <label>CV: </label>
@@ -64,9 +67,9 @@
     </form>
     <?php
             }
-        }else{
-            echo "<div class='notif red'>Kaut kas nogāja grezi! Atgriezies sākumlapā, un mēģini vēlreiz</div>";
-            header("Refresh: 2, url=./");
+        } else {
+            echo "<div class='notif red'>Kaut kas nogāja greizi! Atgriezies sākumlapā, un mēģini vēlreiz</div>";
+            header("Refresh: 2, url=./vakances.php");
         }
     ?>
 </div>

@@ -6,6 +6,36 @@
 <body>
     <section class="admin">
         <div class="moderatoriAdmin">
+            <?php
+                if(isset($_POST['pievienotVak'])){
+                    $amats = $_POST['amats'];
+                    $uznemums = $_POST['uznemums'];
+                    $alga = $_POST['alga'];
+                    $apraksts = $_POST['apraksts'];
+                    $atrasanas_vieta = $_POST['adrese'];
+                    $darba_veids = $_POST['darba_veids'];
+                    $pienakumi = $_POST['pienakumi'];
+                    $prasmes = $_POST['prasmes'];
+                    $valodas = $_POST['valodas'];
+                    $kontaktpersona = $_POST['kontaktpersona'];
+                    $epasts = $_POST['epasts'];
+                    $talrunis = $_POST['talrunis'];
+                    $attels_url = $_POST['attels_url'];
+
+                    if($amats != '' && $uznemums != '' && $alga != '' && $atrasanas_vieta != '' && $darba_veids != '' && $prasmes != '' && $kontaktpersona != '' && $epasts != '' && $talrunis != ''){
+                        $sqlVak = "INSERT INTO itspeks_vakances (Amats, Uznemums, Alga, Apraksts, Atrasanas_vieta, Darba_veids, Pienakumi, Prasmes, Valodas, Kontaktpersona, Epasts, Talrunis, Attels_URL) VALUES ('$amats', '$uznemums', '$alga', '$apraksts', '$atrasanas_vieta', '$darba_veids', '$pienakumi', '$prasmes', '$valodas', '$kontaktpersona', '$epasts', '$talrunis', '$attels_url')";
+                        if(mysqli_query($savienojums, $sqlVak)){
+                            echo "<div class='notif green'>Pievienošana ir veiksmīga!</div>";
+                            header("Refresh: 2, url=./vakances.php");
+                        }else{
+                            echo "<div class='notif red'>Pievienošana nav veiksmīga!</div>";
+                            header("Refresh: 2, url=./vakances.php");
+                        }
+                    }else{
+                        echo "Kaut kas nav ievadīts!";
+                    }
+                }else{
+            ?>
             <table>
                 <tr class="heading">
                     <th colspan="2">Pievienot vakanci:</th>
@@ -87,33 +117,6 @@
                 </form>
             </table>
             <?php
-                if(isset($_POST['pievienotVak'])){
-                    $amats = $_POST['amats'];
-                    $uznemums = $_POST['uznemums'];
-                    $alga = $_POST['alga'];
-                    $apraksts = $_POST['apraksts'];
-                    $atrasanas_vieta = $_POST['adrese'];
-                    $darba_veids = $_POST['darba_veids'];
-                    $pienakumi = $_POST['pienakumi'];
-                    $prasmes = $_POST['prasmes'];
-                    $valodas = $_POST['valodas'];
-                    $kontaktpersona = $_POST['kontaktpersona'];
-                    $epasts = $_POST['epasts'];
-                    $talrunis = $_POST['talrunis'];
-                    $attels_url = $_POST['attels_url'];
-
-                    if($amats != '' && $uznemums != '' && $alga != '' && $atrasanas_vieta != '' && $darba_veids != '' && $prasmes != '' && $kontaktpersona != '' && $epasts != '' && $talrunis != ''){
-                        $sqlVak = "INSERT INTO itspeks_vakances (Amats, Uznemums, Alga, Apraksts, Atrasanas_vieta, Darba_veids, Pienakumi, Prasmes, Valodas, Kontaktpersona, Epasts, Talrunis, Attels_URL) VALUES ('$amats', '$uznemums', '$alga', '$apraksts', '$atrasanas_vieta', '$darba_veids', '$pienakumi', '$prasmes', '$valodas', '$kontaktpersona', '$epasts', '$talrunis', '$attels_url')";
-                        if(mysqli_query($savienojums, $sqlVak)){
-                            echo "<div class='notif green'>Pievienošana ir veiksmīga!</div>";
-                            header("Refresh: 2, url=./vakances.php"); 
-                        }else{
-                            echo "<div class='notif red'>Pievienošana nav veiksmīga!</div>";
-                            header("Refresh: 2, url=./vakances.php");
-                        }
-                    }else{
-                        echo "Kaut kas nav ievadīts!";
-                    }
                 }
             ?>
         </div>

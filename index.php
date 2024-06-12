@@ -25,7 +25,7 @@
             <?php
                 require "assets/connect_db.php";
 
-                $aktualitatesSQL = "SELECT * FROM itspeks_aktualitates ORDER BY Datums DESC LIMIT 3";
+                $aktualitatesSQL = "SELECT * FROM itspeks_aktualitates  WHERE Izdzests != 1 ORDER BY Datums DESC LIMIT 3";
                 $atlasaAktualitates = mysqli_query($savienojums, $aktualitatesSQL);
 
                 if(mysqli_num_rows($atlasaAktualitates) > 0){
@@ -33,8 +33,8 @@
                         echo "
                             <div class='box radius'>
                                 <img src='{$aktualitate['Attels_URL']}'>
-                                <p>".date("d.m.Y", strtotime($aktualitate['Datums']))."</h2>
-                                <a href='aktualitates.php' class='aktualVirsraksts'>{$aktualitate['Virsraksts']}</div>
+                                <p>".date("d.m.Y", strtotime($aktualitate['Datums']))."</p>
+                                <a href='aktualitates.php' class='aktualVirsraksts'>{$aktualitate['Virsraksts']}</a>
                             </div>
                         ";
                     }
