@@ -126,7 +126,9 @@ require "header.php";
                             <p><span>{$vakanci['Alga']} EUR</span></p>
                             <p>{$vakanci['Darba_veids']}</p>
                             <p>{$vakanci['Kontaktpersona']}, {$vakanci['Epasts']}, {$vakanci['Talrunis']}</p>
-                            <a href='pieteikums.php' class='btn'>Pieteikties</a>
+                            <form action='pieteikums.php' method='post'>
+                                <button type='submit' class='btn' name='pieteikties' value='{$vakanci['Vakances_ID']}'>Pieteikties</button>
+                            </form>
                         </div>
                     </div>
                 ";
