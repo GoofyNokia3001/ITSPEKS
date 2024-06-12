@@ -15,15 +15,15 @@ require "header.php";
             <select name="amats" class="radius">
                 <option value="" disabled selected>Amats</option>
                 <?php
-                require "assets/connect_db.php";
-                $amatsQuery = "SELECT DISTINCT Amats FROM itspeks_vakances";
-                $result = mysqli_query($savienojums, $amatsQuery);
-                if ($result && mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $selected = isset($_POST['amats']) && $_POST['amats'] == $row['Amats'] ? 'selected' : '';
-                        echo "<option value='{$row['Amats']}' $selected>{$row['Amats']}</option>";
+                    require "assets/connect_db.php";
+                    $amatsQuery = "SELECT DISTINCT Amats FROM itspeks_vakances";
+                    $result = mysqli_query($savienojums, $amatsQuery);
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $selected = isset($_POST['amats']) && $_POST['amats'] == $row['Amats'] ? 'selected' : '';
+                            echo "<option value='{$row['Amats']}' $selected>{$row['Amats']}</option>";
+                        }
                     }
-                }
                 ?>
             </select>
             <input type="number" name="algaMin" placeholder="Algas diapazons sākums" class="radius" value="<?php echo isset($_POST['algaMin']) ? $_POST['algaMin'] : ''; ?>">
