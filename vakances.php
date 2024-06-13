@@ -136,12 +136,10 @@ require "header.php";
         } else {
             echo "<div class='parFiltri'>Nav nevienas specialitātēs, ko attēlot!</div>";
         }
-
-        // Close the database connection
         mysqli_close($savienojums);
         ?>
     </div>
 </div>
 <?php
-require "footer.php";
+    require "footer.php";
 ?>
