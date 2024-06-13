@@ -13,7 +13,7 @@ require "header.php";
                 <option value="ventspils" <?php if (isset($_POST['atrasanasVieta']) && $_POST['atrasanasVieta'] == 'ventspils') echo 'selected'; ?>>Ventspils</option>
             </select>
             <select name="amats" class="radius">
-                <option value="" disabled selected>Amats</option>
+                <option value="" selected>Amats</option>
                 <?php
                     require "assets/connect_db.php";
                     $amatsQuery = "SELECT DISTINCT Amats FROM itspeks_vakances WHERE Izdzests != 1";
