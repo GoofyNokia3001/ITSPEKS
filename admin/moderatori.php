@@ -13,7 +13,7 @@
 <body>
     <section class="admin">
         <div class="moderatoriAdmin">
-            <table>
+            <table style="margin-top: 8.5%;">
                 <tr class="heading">
                     <th>Lietotājvārds</th>
                     <th>E-pasts</th>

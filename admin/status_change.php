@@ -5,31 +5,25 @@ $page = "pieteikumi";
 require "headerGaligais.php";
 require "../assets/connect_db.php";
 
-// Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // Check if the status change form is submitted
     if (isset($_POST['mainitStatusu'])) {
         $pieteikums_ID = $_POST['mainitStatusu'];
         $atlasitais_stauss = $_POST['Statuss'];
 
-        // Update status in the database
         $atjaunot_statusu_SQL = "UPDATE itspeks_pieteikumi SET Statuss = '$atlasitais_stauss' WHERE Pieteikums_ID = $pieteikums_ID";
         if (mysqli_query($savienojums, $atjaunot_statusu_SQL)) {
             echo "<div class='notif green'>Statuss ir mainīts veiksmīgi</div>";
         } else {
             echo "<div class='notif red'>Sistēmas kļūda, lūdzu, mēģiniet vēlreiz vēlāk</div>";
         }
-        // Redirect back to the last visited page after 3 seconds
         header("Refresh: 3; url=pieteikumi.php");
-        exit(); // Ensure no further code is executed
+        exit(); 
     } else if (isset($_POST['change'])) {
-        // Fetch data for the specific ID
         $pieteikums_ID = $_POST['change'];
         $pieteikums_SQL = "SELECT * FROM itspeks_pieteikumi WHERE Pieteikums_ID = $pieteikums_ID";
         $result = mysqli_query($savienojums, $pieteikums_SQL);
 
         if ($row = mysqli_fetch_assoc($result)) {
-            // Display the row
 ?>
 <section class="admin">
     <div class="moderatoriAdmin">
@@ -85,9 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         echo "<div class='notif red'>Nederīgs pieprasījums</div>";
     }
 } else {
-    // If the form is not submitted, redirect to pieteikumi.php
     header("Location: pieteikumi.php");
-    exit(); // Ensure no further code is executed
+    exit();
 }
 
 require "footerAdmin.php";

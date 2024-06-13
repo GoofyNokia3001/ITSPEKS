@@ -63,3 +63,21 @@ function toggleContent(button) {
 document.querySelectorAll('.box .content').forEach(content => {
     content.style.display = 'none'
 })
+
+ 
+function displayTime() {
+    var now = new Date();
+    var days = ['Svētdiena', 'Pirmdiena', 'Otrdiena', 'Trešdiena', 'Ceturdiena', 'Piektdiena', 'Sestdiena'];
+    var dayOfWeek = days[now.getDay()];
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timeString = dayOfWeek + ", " + hours + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+    document.getElementById('day').textContent = timeString;
+}
+
+
+setInterval(displayTime, 1000);
+
+
+displayTime();

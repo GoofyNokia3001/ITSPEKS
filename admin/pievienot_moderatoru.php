@@ -1,5 +1,5 @@
 <?php
-    $page = "vakances";
+    $page = "moderatori";
     require "headerGaligais.php";
 
     if ($_SESSION['userRole'] !== 'admin') {
@@ -14,7 +14,7 @@
         <div class="moderatoriAdmin">
             <table>
                 <tr class="heading">
-                    <th colspan="2">Pievienot vakanci:</th>
+                    <th colspan="2">Pievienot moderatoru:</th>
                 </tr>
                 <form method="POST">
                     <tr>

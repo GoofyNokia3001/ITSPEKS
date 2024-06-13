@@ -84,7 +84,7 @@
                     }
                 ?>
                 <tr>
-                    <td colspan="11" class="hid">
+                    <td colspan="12" class="hid">
                         <form method='POST' action='pievienot_vakance.php'>
                             <button type='submit' class="btn"><i class="fas fa-add"></i></button>
                         </form>

@@ -36,8 +36,20 @@
                             <td>" . $row["Epasts"] . "</td>
                             <td>" . $row["Izglitiba"] . "</td>
                             <td>" . $row["Darba_pieredze"] . "</td>
-                            <td><i class='fas fa-" . ($row["CV"] ? "check" : "times") . "'></i></td>
-                            <td><i class='fas fa-" . ($row["Motivacijas_vestule"] ? "check" : "times") . "'></i></td>
+                            <td>";
+                    if ($row["CV"]) {
+                        echo "<a href='download.php?id={$row['Pieteikums_ID']}&type=cv' class='fas fa-check'></a>";
+                    } else {
+                        echo "<i class='fas fa-times'></i>";
+                    }
+                    echo "</td>
+                            <td>";
+                    if ($row["Motivacijas_vestule"]) {
+                        echo "<a href='download.php?id={$row['Pieteikums_ID']}&type=motVestule' class='fas fa-check'></a>";
+                    } else {
+                        echo "<i class='fas fa-times'></i>";
+                    }
+                    echo "</td>
                             <td>" . $row["Komentari"] . "</td>
                             <td>
                                 <form method='POST' action='status_change.php'>
@@ -53,3 +65,5 @@
     <?php
         require "footerAdmin.php";
     ?>
+</body>
+</html>

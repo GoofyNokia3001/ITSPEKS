@@ -36,11 +36,9 @@
                             if ($newPassword !== $confirmPassword) {
                                 echo "Jaunās paroles nesakrīt!";
                             } else {
-                                // Check in the 'itspeks_administratori' table
                                 $sqlAdmin = "SELECT * FROM itspeks_administratori WHERE Lietotajvards = '$username'";
                                 $resultAdmin = mysqli_query($savienojums, $sqlAdmin);
 
-                                // Check in the 'itspeks_moderatori' table
                                 $sqlModerator = "SELECT * FROM itspeks_moderatori WHERE Lietotajvards = '$username' AND Izdzests != 1";
                                 $resultModerator = mysqli_query($savienojums, $sqlModerator);
 

@@ -5,7 +5,7 @@
 ?>
 <body>
 <section class="admin">
-        <div class="aktualitatesAdmin">
+        <div class="moderatoriAdmin">
             <table>
                 <tr class="heading">
                     <th>Attēls</th>
