@@ -14,6 +14,7 @@
         <a href="#" class="logo">IT - SPĒKS</a>
         <nav class="navbar">
             <a href="./">Sākumlapa</a>
+            <a href="nomainit_parole.php" class="<?php echo ($page == 'parole' ? 'current' : '') ?>" >Nomainīt parole</a>
             <a href="vakances.php" class="<?php echo ($page == 'vakances' ? 'current' : '') ?>" >Vakances</a>
             <a href="aktualitates.php" class="<?php echo ($page == 'aktualitates' ? 'current' : '') ?>" >Jaunākās aktualitātes</a>
             <a href="moderatori.php" class="<?php echo ($page == 'moderatori' ? 'current' : '') ?>" >Moderatori</a>

@@ -5,7 +5,7 @@ require "header.php";
 <div class="square">
     <div class="filter radius">
         <form method="POST">
-            <input type="text" name="uznemums" placeholder="Uzņēmums" class="radius" value="<?php echo isset($_POST['uznemums']) ? $_POST['uznemums'] : ''; ?>">
+            <input type="text" name="uznemums" placeholder="Uzņēmums" class="radius" value="<?php echo htmlspecialchars($_POST['uznemums'] ?? ''); ?>">
             <select name="atrasanasVieta" class="radius">
                 <option value="" selected>Atrašanās vieta</option>
                 <option value="liepaja" <?php if (isset($_POST['atrasanasVieta']) && $_POST['atrasanasVieta'] == 'liepaja') echo 'selected'; ?>>Liepāja</option>
@@ -16,18 +16,18 @@ require "header.php";
                 <option value="" disabled selected>Amats</option>
                 <?php
                     require "assets/connect_db.php";
-                    $amatsQuery = "SELECT DISTINCT Amats FROM itspeks_vakances";
+                    $amatsQuery = "SELECT DISTINCT Amats FROM itspeks_vakances WHERE Izdzests != 1";
                     $result = mysqli_query($savienojums, $amatsQuery);
                     if ($result && mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             $selected = isset($_POST['amats']) && $_POST['amats'] == $row['Amats'] ? 'selected' : '';
-                            echo "<option value='{$row['Amats']}' $selected>{$row['Amats']}</option>";
+                            echo "<option value='".htmlspecialchars($row['Amats'])."' $selected>".htmlspecialchars($row['Amats'])."</option>";
                         }
                     }
                 ?>
             </select>
-            <input type="number" name="algaMin" placeholder="Algas diapazons sākums" class="radius" value="<?php echo isset($_POST['algaMin']) ? $_POST['algaMin'] : ''; ?>">
-            <input type="number" name="algaMax" placeholder="Algas diapazons beigums" class="radius" value="<?php echo isset($_POST['algaMax']) ? $_POST['algaMax'] : ''; ?>">
+            <input type="number" name="algaMin" placeholder="Algas diapazons sākums" class="radius" value="<?php echo htmlspecialchars($_POST['algaMin'] ?? ''); ?>">
+            <input type="number" name="algaMax" placeholder="Algas diapazons beigums" class="radius" value="<?php echo htmlspecialchars($_POST['algaMax'] ?? ''); ?>">
             <div class="radio">
                 <input type="radio" id="html" name="kartosana" value="aug" <?php if (isset($_POST['kartosana']) && $_POST['kartosana'] == 'aug') echo 'checked'; ?>>
                 <label>Augošā</label>
@@ -72,9 +72,9 @@ require "header.php";
             $order = $kartosana == 'aug' ? "ORDER BY Alga ASC" : "ORDER BY Alga DESC";
         }
 
-        $vakancesSQL = "SELECT * FROM itspeks_vakances";
+        $vakancesSQL = "SELECT * FROM itspeks_vakances WHERE Izdzests != 1";
         if (count($conditions) > 0) {
-            $vakancesSQL .= " WHERE " . implode(' AND ', $conditions);
+            $vakancesSQL .= " AND " . implode(' AND ', $conditions);
         }
         $vakancesSQL .= " " . $order;
 
@@ -90,14 +90,14 @@ require "header.php";
                 if (!empty($pienakumiArray)) {
                     $pienakumiList = "<p><span>Pienākumi:</span></p><ul>";
                     foreach ($pienakumiArray as $pienakums) {
-                        $pienakumiList .= "<li>" . $pienakums . "</li>";
+                        $pienakumiList .= "<li>" . htmlspecialchars($pienakums) . "</li>";
                     }
                     $pienakumiList .= "</ul>";
                 }
 
                 $prasmesList = "<ul>";
                 foreach ($prasmesArray as $prasme) {
-                    $prasmesList .= "<li>" . $prasme . "</li>";
+                    $prasmesList .= "<li>" . htmlspecialchars($prasme) . "</li>";
                 }
                 $prasmesList .= "</ul>";
 
@@ -105,37 +105,40 @@ require "header.php";
                 if (!empty($valodasArray)) {
                     $valodasList = "<p><span>Valodas:</span></p><ul>";
                     foreach ($valodasArray as $valoda) {
-                        $valodasList .= "<li>" . $valoda . "</li>";
+                        $valodasList .= "<li>" . htmlspecialchars($valoda) . "</li>";
                     }
                     $valodasList .= "</ul>";
                 }
 
                 echo "
                     <div class='ieraksts box radius shadow'>
-                        <img src='{$vakanci['Attels_URL']}'>
-                        <h2>{$vakanci['Amats']}</h2>
-                        <h3>{$vakanci['Uznemums']}</h3>
+                        <img src='".htmlspecialchars($vakanci['Attels_URL'])."'>
+                        <h2>".htmlspecialchars($vakanci['Amats'])."</h2>
+                        <h3>".htmlspecialchars($vakanci['Uznemums'])."</h3>
                         <button class='toggle-btn' onclick='toggleContent(this)'>Vairāk</button>
                         <div class='content'>
-                            <h4>{$vakanci['Atrasanas_vieta']}</h4>
-                            <p>{$vakanci['Apraksts']}</p>
+                            <h4>".htmlspecialchars($vakanci['Atrasanas_vieta'])."</h4>
+                            <p>".htmlspecialchars($vakanci['Apraksts'])."</p>
                             {$pienakumiList}
                             <p><span>Prasmes:</span></p>
                             {$prasmesList}
                             {$valodasList}
-                            <p><span>{$vakanci['Alga']} EUR</span></p>
-                            <p>{$vakanci['Darba_veids']}</p>
-                            <p>{$vakanci['Kontaktpersona']}, {$vakanci['Epasts']}, {$vakanci['Talrunis']}</p>
+                            <p><span>".htmlspecialchars($vakanci['Alga'])." EUR</span></p>
+                            <p>".htmlspecialchars($vakanci['Darba_veids'])."</p>
+                            <p>".htmlspecialchars($vakanci['Kontaktpersona']).", ".htmlspecialchars($vakanci['Epasts']).", ".htmlspecialchars($vakanci['Talrunis'])."</p>
                             <form action='pieteikums.php' method='post'>
-                                <button type='submit' class='btn' name='pieteikties' value='{$vakanci['Vakances_ID']}'>Pieteikties</button>
+                                <button type='submit' class='btn' name='pieteikties' value='".htmlspecialchars($vakanci['Vakances_ID'])."'>Pieteikties</button>
                             </form>
                         </div>
                     </div>
                 ";
             }
         } else {
-            echo "Nav nevienas specialitātēs, ko attēlot!";
+            echo "<div class='parFiltri'>Nav nevienas specialitātēs, ko attēlot!</div>";
         }
+
+        // Close the database connection
+        mysqli_close($savienojums);
         ?>
     </div>
 </div>

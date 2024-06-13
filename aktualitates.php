@@ -8,13 +8,13 @@
     <?php
         require "assets/connect_db.php";
 
-        $aktualitatesSQL = "SELECT * FROM itspeks_aktualitates ORDER BY Datums DESC";
+        $aktualitatesSQL = "SELECT * FROM itspeks_aktualitates WHERE Izdzests != 1 ORDER BY Datums DESC";
         $atlasaAktualitates = mysqli_query($savienojums, $aktualitatesSQL);
 
         if(mysqli_num_rows($atlasaAktualitates) > 0){
             while($aktualitate = mysqli_fetch_assoc($atlasaAktualitates)){
                 echo "
-                    <div class='box'>
+                    <div class='box imgForAkt'>
                         <img src='{$aktualitate['Attels_URL']}'>
                         <p class='date'>".date("d.m.Y", strtotime($aktualitate['Datums']))."</h2>
                         <h2>{$aktualitate['Virsraksts']}</h2>

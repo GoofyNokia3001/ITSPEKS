@@ -24,4 +24,4 @@
 - [ ] Pieteikšana vakancēm attēlošana, statusa maiņa (Kļims)
 - [x] Iespēja pieteikties vakancēm (Elīna)
 - [x] Funkcija, lai sazināties (Kļims)
-- [ ] Mainīt parole (Kļims)
+- [x] Mainīt parole (Elīna)

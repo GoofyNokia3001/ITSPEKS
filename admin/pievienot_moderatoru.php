@@ -51,9 +51,9 @@
 
                     if($lietotajvards != '' && $parole1 != '' && $parole2 != ''){
                         if(mysqli_num_rows($rezultatsLV) > 0){
-                            echo "Šis lietotājvārds jau eksistē!";
+                            echo "<div class='notif red'>Šis lietotājvārds jau eksistē!</div>";
                         }else if($parole1 != $parole2){
-                            echo "Paroli nav vienādi!";
+                            echo "<div class='notif red'>Paroles nav vienādas!</div>";
                         }else{
                             $par = password_hash($parole1, PASSWORD_DEFAULT);
                             $sql = "INSERT INTO itspeks_moderatori(Lietotajvards, Epasts, Parole, Izdzests) VALUES ('$lietotajvards', '$epasts', '$par', 0)";
@@ -66,7 +66,7 @@
                             }
                         }
                     }else{
-                        echo "Kaut kas nav ievadīts!";
+                        echo "<div class='notif red'>Kaut kas nav ievadīts!</div>";
                     }
                 }
             ?>
