@@ -21,7 +21,7 @@
 - [x] Vakances attēlošana, pievienošana, dzēšana (Elīna)
 - [x] Vakances attēlošana no lietotāja pusē (Elīna)
 - [x] Vakances filtrēšana (Kļims)
-- [ ] Pieteikšana vakancēm attēlošana, statusa maiņa (Kļims)
+- [x] Pieteikšana vakancēm attēlošana, statusa maiņa (Kļims)
 - [x] Iespēja pieteikties vakancēm (Elīna)
 - [x] Funkcija, lai sazināties (Kļims)
 - [x] Mainīt parole (Elīna)
